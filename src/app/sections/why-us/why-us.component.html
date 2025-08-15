@@ -1,14 +1,44 @@
 <section id="why-us" class="why-us">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center mb-5">
-        <h2 class="display-5 fw-bold mb-4">Pero... ¿Por qué elegirnos?</h2>
-        <p class="lead">Experimente la diferencia que viene con la tradición, 
+      <div class="col-lg-12 text-center mb-3">
+        <h2 class="display-5 fw-bold mb-4">¿Por qué elegirnos?</h2>
+        <p class="lead">Experimente la diferencia que viene con la tradición,
           la innovación y el compromiso inquebrantable con la excelencia.
         </p>
       </div>
     </div>
-    <div class="row g-4 align-items-center">
+    <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-6">
+        <p>
+          Porque en A&V Traditions no solo movemos productos, sino historias y confianza. Unimos la tradición de
+          nuestros productores con la precisión de la logística moderna para que cada envío llegue con la misma calidad
+          con la que salió de origen. Creemos en relaciones comerciales duraderas, en el poder de la información para
+          tomar mejores decisiones y en el valor de representar la riqueza de Colombia en cada transacción. Con
+          nosotros, tu negocio no es uno más: es un socio estratégico en el comercio global.
+        </p>
+
+        <div class="col-12 col-lg-12">
+          <div class="row gy-3">
+            <div *ngFor="let service of services" class="col-12 col-sm-6 col-md-4">
+              <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
+                <div class="icon-wrapper d-flex align-items-center justify-content-center round">
+                  <span class="material-icons" [ngStyle]="{ color: service.color }">
+                    {{ service.icon }}
+                  </span>
+                </div>
+                <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
+
+        </div>
+      </div>
     </div>
+    
   </div>
 </section>

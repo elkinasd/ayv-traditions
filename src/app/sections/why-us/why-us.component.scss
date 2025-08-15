@@ -1,5 +1,8 @@
 @use '../../shared/global-styles.scss' as *;
 
 #why-us {
-  min-height: 80vh;
+  min-height: 100vh;
+}
+.bgColor{
+  border: 1px solid black;
 }

@@ -10,28 +10,27 @@ import { CommonModule } from '@angular/common';
 })
 export class ServicesComponent {
   
-  services: { icon: string; bgClass: string; title: string; description: string; }[] = [
-    {
-      icon: 'local_shipping', 
-      bgClass: 'bg-orange',
-      title: 'Importación & Exportación',
-      description: `Comercio de productos agrícolas, productos alimenticios y 
-      materias primas con alcance global y experiencia local.`
-    },
+  services: { icon: string; bgClass: string; title: string; description: string; linkOne: string; linkTwo: string }[] = [
     {
       icon: 'directions_boat', 
-      bgClass: 'bg-green',
-      title: 'Asesorías',
-      description: `Contamos con un personal altamente calificado para brindarte
-      una asesoría de calidad y que tepermita lograr unna mejor toma de decisiones.`
+      bgClass: 'bg-light-navy',
+      title: 'Exportación',
+      description: `Comercio de productos agrícolas, productos alimenticios y 
+      materias primas con alcance global y experiencia local.`,
+      linkOne: 'algo.com',
+      linkTwo: 'algo.com',
     },
     {
-      icon: 'support_agent', 
-      bgClass: 'bg-grey',
-      title: 'Asesorías',
-      description: `Contamos con un personal altamente calificado para brindarte
-      una asesoría de calidad y que tepermita lograr unna mejor toma de decisiones.`
-    },
+      icon: 'handshake', 
+      bgClass: 'bg-green',
+      title: 'Broker',
+      description: `Conectamos compradores y proveedores de manera eficiente, 
+      facilitando la negociación y asegurando transacciones exitosas. 
+      Nuestro objetivo es simplificar el proceso y generar valor para ambas partes.`,
+      linkOne: 'algo.com',
+      linkTwo: 'algo.com',
+      
+    }
   ];
 
 }

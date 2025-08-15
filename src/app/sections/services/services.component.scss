@@ -1,7 +1,7 @@
 @use '../../shared/global-styles.scss' as *;
 
 #services {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 .service-boxs {
   width: 80px;
@@ -15,6 +15,11 @@
   height: 50px;
   width: 50px;
   background-color: $avt-orange;
+}
+.bg-light-navy {
+  height: 50px;
+  width: 50px;
+  background-color: $avt-light-navy;
 }
 
 .bg-green{
