@@ -1,0 +1,18 @@
+@use '../../shared/global-styles.scss' as *;
+
+#about {
+  min-height: 80vh;
+}
+
+.pet-container {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium);
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

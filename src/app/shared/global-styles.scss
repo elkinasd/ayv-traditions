@@ -1,0 +1,150 @@
+// Paleta de colores A&V Traditions (mejorada y sobria)
+$avt-navy: #112A46;
+$avt-navy-form: #325169;
+$avt-orange: #DD5D03;
+$avt-orange-red: #f85f19;
+$avt-green: #2d8a4d;
+$avt-crimson: #b91c3c;
+$avt-dark-gray: #2B2B2B;
+$avt-light-gray: #f8f9fa;
+$avt-medium-gray: #6c757d;
+$avt-light-navy: #44759a;
+$avt-white: #FFFFFF;
+
+// Estilos base globales
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $avt-white;
+  color: $avt-dark-gray;
+  line-height: 1.6;
+}
+
+
+.btn-primary {
+  background-color: $avt-orange-red;
+  border-color: $avt-orange-red;
+  font-weight: 600;
+  padding: 12px 24px;
+  &:hover {
+    background-color: darken($avt-orange-red, 10%);
+    border-color: darken($avt-orange-red, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-primary {
+  color: $avt-navy;
+  border-color: $avt-navy;
+  font-weight: 600;
+  &:hover {
+    background-color: $avt-navy;
+    color: $avt-white;
+  }
+}
+
+.btn-outline-light-avt {
+  border-width: 2px;
+  font-weight: 600;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+
+// Colores de secciones (jerarquía visual mejorada)
+$hero-bg: $avt-navy;
+$about-bg: $avt-white;
+$services-bg: $avt-light-gray;
+$whyus-bg: $avt-white;
+$contact-bg: $avt-light-gray;
+
+// Estilos globales de secciones con mejor contraste
+section {
+  padding: 80px 0;
+  min-height: 80vh;
+}
+
+#hero {
+  background: $hero-bg;
+  color: $avt-white;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 58, 82, 0.1);
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+#about {
+  background-color: $about-bg;
+  color: black;
+}
+
+#services {
+  background-color: $services-bg;
+  color: $avt-dark-gray;
+}
+
+#why-us {
+  background-color: $whyus-bg;
+  color: $avt-dark-gray;
+}
+
+#contact {
+  background-color: $contact-bg;
+  color: black;
+}
+
+// Utilidades adicionales
+.text-golden {
+  color: $avt-orange;
+}
+
+.text-orange {
+  color: $avt-orange-red;
+}
+
+.text-green {
+  color: $avt-green;
+}
+
+.bg-golden {
+  background-color: $avt-orange;
+}
+
+.shadow-custom {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bg-navy {
+  background-color: $avt-navy;
+}
+
+.bg-crimson {
+  background-color: $avt-crimson;
+}
+
+.text-navy {
+  color: $avt-navy;
+}
+
+.text-crimson {
+  color: $avt-crimson;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

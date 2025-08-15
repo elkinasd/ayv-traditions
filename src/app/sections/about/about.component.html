@@ -1,0 +1,58 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <h2 class="text-center display-3 fw-bold mb-4">
+        Acerca de A&V Traditions
+      </h2>
+      <h6 class="lead text-center mb-5">Construido sobre la confianza, la tradición y la
+        búsqueda incansable de la excelencia en el comercio internacional.
+      </h6>
+    </div>
+    <div class="row g-4 align-items-start">
+      <!-- Formulario -->
+      <div class="col-12 col-lg-6">
+        <h4>Nuestra historia</h4>
+        <p>A&V Traditions surgió de la visión de conectar los mercados globales con la experiencia local.
+          Fundados en principios de integridad e innovación, nos especializamos en conectar a productores
+          agrícolas con compradores internacionales mediante una logística eficiente y un compromiso
+          inquebrantable con la calidad.</p>
+        <p>
+          Nuestro compromiso con BIC (Business Intelligence & Commerce) garantiza que cada transacción esté
+          respaldada por información basada en datos, fomentando colaboraciones sostenibles que abarcan todos
+          los continentes. Creemos en la magia de la tradición combinada con la eficiencia moderna.</p>
+      </div>
+
+      <!-- Mensaje lateral -->
+      <div class="col-12 col-lg-6">
+        <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="logo-navbar.png" alt="vox-umbrae" width="150px">
+          </div>
+          <h3>
+            Conoce a <strong>Vox</strong> nuestro guía y protector
+          </h3>
+          <p>
+            Nuestra mascota inteligente, que simboliza la sabiduría en el comercio y las conexiones globales rápidas.
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-6">
+        <div class="row gy-3">
+          <div *ngFor="let service of services" class="col-12 col-sm-6 col-md-4">
+            <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
+              <div class="icon-wrapper d-flex align-items-center justify-content-center"
+                [ngStyle]="{'background-color': service.bgColor}">
+                <span class="material-icons" [ngStyle]="{'color': service.color}">
+                  {{ service.icon }}
+                </span>
+              </div>
+              <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>

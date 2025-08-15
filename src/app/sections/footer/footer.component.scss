@@ -1,0 +1,18 @@
+@use '../../shared/global-styles.scss' as *;
+
+.footer {
+  border-top: 3px solid $avt-orange;
+  
+  a {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $avt-orange !important;
+      transform: translateY(-2px);
+    }
+  }
+  
+  .vr {
+    height: 20px;
+  }
+}
