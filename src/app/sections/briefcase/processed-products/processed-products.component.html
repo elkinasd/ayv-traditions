@@ -1,0 +1,53 @@
+<div class="processed-products-container">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-5">
+                    <h2>Nuestros productos procesados</h2>
+                    <p class="lead text-muted">
+                        Nuestra selección premium de productos agrícolas procesados listos
+                        para el comercio internacional
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col" *ngFor="let processedProduct of processedProducts">
+                <div class="card h-100">
+                    <img [src]="processedProduct.image" class="card-img-top" alt="..." height="220px" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ processedProduct.title }}</h5>
+                        <p class="card-text">{{ processedProduct.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="text-center mb-5">
+                    <h3>¿Necesitas uno de nustros productos?</h3>
+                    <p class="lead text-muted">Ponte en contacto</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#contactUsModal">
+                        Contáctanos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactUsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-contact></app-contact>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
