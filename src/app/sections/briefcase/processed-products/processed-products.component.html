@@ -38,16 +38,96 @@
     </div>
 </div>
 
+
+<!-- Modal contacto -->
 <div class="modal fade" id="contactUsModal">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <app-contact></app-contact>
-            </div>
-            <div class="modal-footer"></div>
+        <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
+            <form novalidate>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required>
+                            <label for="name">Nombre completo</label>
+                            <div class="invalid-feedback">Tu nombre es requerido.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="company-name"
+                                placeholder="Nombre de la Empresa">
+                            <label for="company-name">Nombre de la empresa</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" placeholder="Correo electrónico"
+                                required>
+                            <label for="email">Correo electrónico</label>
+                            <div class="invalid-feedback">Ingresa un correo válido.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="tel" class="form-control" id="phone" placeholder="Teléfono">
+                            <label for="phone">Teléfono</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="issue" required>
+                                <option value="" selected disabled></option>
+                                <option>Solicitud</option>
+                                <option>Cotización</option>
+                                <option>Queja</option>
+                                <option>Llamada</option>
+                            </select>
+                            <label for="issue">Asunto</label>
+                            <div class="invalid-feedback">Selecciona un asunto.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="channel" required>
+                                <option value="" selected disabled></option>
+                                <option>WhatsApp</option>
+                                <option>Email</option>
+                            </select>
+                            <label for="channel">Medio de contacto</label>
+                            <div class="invalid-feedback">Selecciona un medio.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Mensaje" id="request"
+                                style="height: 140px"></textarea>
+                            <label for="request">Mensaje detallando el requerimiento</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Acepto el tratamiento de datos personales
+                            </label>
+                            <div class="invalid-feedback">Debes aceptar los términos.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="d-grid col-8 col-md-6 mx-auto">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
