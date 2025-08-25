@@ -15,7 +15,7 @@ export const environment = {
 
   // Analytics Configuration
   analytics: {
-    googleAnalyticsId: 'G-METXAVSQX', // ID real de Google Analytics
+    googleAnalyticsId: 'G-MEXTXVKSQL', // ID real de Google Analytics corregido
     enableDebug: true, // Solo para development
     enablePerformanceMonitoring: true
   }
