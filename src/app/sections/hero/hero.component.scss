@@ -6,9 +6,9 @@
 }
 
 .keyboard_arrow_down{
-  position: absolute;
-  height: 290px;
+  position: relative;
   animation: bounce 2s infinite;
+  margin-top: 120px;
 }
 
 @keyframes bounce {
