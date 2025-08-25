@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://avtraditions.com/sitemap.xml
+
+# Páginas que no queremos indexar (cuando existan)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Permitir específicamente páginas importantes
+Allow: /portafolio/
+Allow: /portafolio/procesados
+Allow: /portafolio/no-procesados
+
+# Crawl delay (opcional, para sitios con mucho tráfico)
+# Crawl-delay: 1
