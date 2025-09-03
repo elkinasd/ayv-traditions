@@ -4,21 +4,3 @@
   min-height: 100vh;
   border-top: 3px solid $avt-orange;
 }
-
-.keyboard_arrow_down{
-  position: relative;
-  animation: bounce 2s infinite;
-  margin-top: 120px;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
