@@ -33,14 +33,9 @@ export class ProcessedProductsComponent {
       description: `Harinas y derivados de maíz, arroz y otros cereales que aportan valor agregado a la panadería y alimentos balanceados.`
     },
     {
-      image: 'vegetable-oils.jpg',
-      title: `Aceites y grasas vegetales`,
-      description: `Aceites refinados de palma, coco y manteca de cacao, esenciales en la industria alimenticia y cosmética.`
-    },
-    {
-      image: 'jam.jpg',
-      title: `Salsas, mermeladas y confituras`,
-      description: `Preparaciones artesanales e industriales a base de frutas tropicales, ideales para acompañar y exportar con valor agregado.`
+      image: 'tuberculos.webp',
+      title: `Tubérculos`,
+      description: `Actualmente contamos con yuca y papa empacados al vacío, productos frescos y de alta calidad listos para su comercialización.`
     }
   ]
 

@@ -12,11 +12,6 @@ export class UnprocessedProductsComponent {
 
     unprocessedProducts: { image: string, title: string, description: string }[] = [
   {
-    image: 'raw-sugar.jpg',
-    title: `Azúcar cruda`,
-    description: `Azúcar sin refinar ni procesos industriales, utilizada como materia prima en la industria alimentaria internacional.`
-  },
-  {
     image: 'fresh-fruits.jpg',
     title: `Frutas frescas`,
     description: `Mangos, bananos, fresas y otras frutas tropicales exportadas en estado fresco, reconocidas por su calidad y sabor natural.`
