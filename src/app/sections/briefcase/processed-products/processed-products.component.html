@@ -43,91 +43,111 @@
 <div class="modal fade" id="contactUsModal">
     <div class="modal-dialog">
         <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
-            <form novalidate>
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required>
-                            <label for="name">Nombre completo</label>
-                            <div class="invalid-feedback">Tu nombre es requerido.</div>
-                        </div>
-                    </div>
+            <form  [formGroup]="contactUsForm" (ngSubmit)="contactUs()">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="fullName" placeholder="Nombre Completo" required formControlName="fullName">
+                <label for="fullName">Nombre completo</label>
+                <div class="invalid-feedback">Tu nombre es requerido.</div>
+              </div>
+            </div>
 
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="company-name"
-                                placeholder="Nombre de la Empresa">
-                            <label for="company-name">Nombre de la empresa</label>
-                        </div>
-                    </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="company-name" placeholder="Nombre de la Empresa" formControlName="companyName">
+                <label for="company-name">Nombre de la empresa</label>
+              </div>
+            </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="Correo electrónico"
-                                required>
-                            <label for="email">Correo electrónico</label>
-                            <div class="invalid-feedback">Ingresa un correo válido.</div>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required formControlName="email">
+                <label for="email">Correo electrónico</label>
+                <div class="invalid-feedback">Ingresa un correo válido.</div>
+              </div>
+            </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="tel" class="form-control" id="phone" placeholder="Teléfono">
-                            <label for="phone">Teléfono</label>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating">
+                <input type="tel" class="form-control" id="phone" placeholder="Teléfono" formControlName="phone">
+                <label for="phone">Teléfono</label>
+              </div>
+            </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <select class="form-select" id="issue" required>
-                                <option value="" selected disabled></option>
-                                <option>Solicitud</option>
-                                <option>Cotización</option>
-                                <option>Queja</option>
-                                <option>Llamada</option>
-                            </select>
-                            <label for="issue">Asunto</label>
-                            <div class="invalid-feedback">Selecciona un asunto.</div>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="issue" required formControlName="issue">
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="solicitud">Solicitud</option>
+                  <option value="cotizacion">Cotización</option>
+                  <option value="queja">Queja</option>
+                  <option value="llamada">Llamada</option>
+                </select>
+                <label for="issue">Asunto</label>
+                <div class="invalid-feedback">Selecciona un asunto.</div>
+              </div>
+            </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <select class="form-select" id="channel" required>
-                                <option value="" selected disabled></option>
-                                <option>WhatsApp</option>
-                                <option>Email</option>
-                            </select>
-                            <label for="channel">Medio de contacto</label>
-                            <div class="invalid-feedback">Selecciona un medio.</div>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="channel" required formControlName="channel">
+                  <option value="" disabled selected>Seleccione un medio</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="email">Email</option>
+                </select>
+                <label for="channel">Medio de contacto</label>
+                <div class="invalid-feedback">Selecciona un medio.</div>
+              </div>
+            </div>
 
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Mensaje" id="request"
-                                style="height: 140px"></textarea>
-                            <label for="request">Mensaje detallando el requerimiento</label>
-                        </div>
-                    </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Mensaje" id="request" style="height: 140px" formControlName="request"></textarea>
+                <label for="request">Mensaje detallando el requerimiento</label>
+              </div>
+            </div>
 
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="terms" required>
-                            <label class="form-check-label" for="terms">
-                                Acepto el tratamiento de datos personales
-                            </label>
-                            <div class="invalid-feedback">Debes aceptar los términos.</div>
-                        </div>
-                    </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="terms" required formControlName="terms">
+                <label class="form-check-label" for="terms">
+                  Acepto el tratamiento de datos personales
+                </label>
+                <div class="invalid-feedback">Debes aceptar los términos.</div>
+              </div>
+            </div>
 
-                    <div class="col-12">
-                        <div class="d-grid col-8 col-md-6 mx-auto">
-                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <div class="col-12">
+              <div class="d-grid col-8 col-md-6 mx-auto">
+                <button [disabled]="loading || contactUsForm.invalid" type="submit" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2">
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                  <span>{{ loading ? 'Enviando…' : 'Enviar' }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
         </div>
     </div>
 </div>
+
+<app-alerts *ngIf="successMsg"
+            type="success"
+            title="¡Éxito!"
+            [message]="successMsg"
+            [autoClose]="true"
+            [autoCloseDelay]="4000"
+            [showLogo]="true"
+            [position]="'top-right'"
+            (closed)="onCloseSuccess()">
+</app-alerts>
+
+<app-alerts *ngIf="errorMsg"
+            type="error"
+            title="Ocurrió un problema"
+            [message]="errorMsg"
+            [dismissible]="true"
+            [position]="'top-right'"
+            (closed)="onCloseError()">
+</app-alerts>
