@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -16,6 +16,8 @@ import { AlertsComponent } from '../../../shared/alerts/alerts.component';
   styleUrl: './unprocessed-products.component.scss'
 })
 export class UnprocessedProductsComponent {
+  
+@ViewChild('contactUsModal') contactUsModal!: ElementRef;
 
   unprocessedProducts: { image: string, title: string, description: string }[] = [
     {
@@ -86,6 +88,7 @@ export class UnprocessedProductsComponent {
             this.contactUsForm.enable({ emitEvent: false });
             this.successMsg = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
             this.contactUsForm.reset({ terms: false });
+            this.hideModal();
           },
           error: () => {
             this.loading = false;
@@ -98,4 +101,12 @@ export class UnprocessedProductsComponent {
       onCloseSuccess(){ this.successMsg = ''; }
       onCloseError(){ this.errorMsg = ''; }
 
+      private hideModal(){
+        const el = this.contactUsModal?.nativeElement as HTMLElement | undefined;
+        const bs = (window as any).bootstrap;
+        if (el && bs?.Modal) {
+          const instance = bs.Modal.getInstance(el) || new bs.Modal(el);
+          instance.hide();
+        }
+      }
 }

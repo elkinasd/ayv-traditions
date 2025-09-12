@@ -1,4 +1,4 @@
-<div class="processed-products-container">
+<div class="processed-products-container mt-5">
     <div class="container py-5">
         <div class="row">
             <div class="col-12">
@@ -40,7 +40,7 @@
 
 
 <!-- Modal contacto -->
-<div class="modal fade" id="contactUsModal">
+<div class="modal fade" id="contactUsModal" #contactUsModal>
     <div class="modal-dialog">
         <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
             <form  [formGroup]="contactUsForm" (ngSubmit)="contactUs()">
@@ -103,7 +103,7 @@
 
             <div class="col-12">
               <div class="form-floating">
-                <textarea class="form-control" placeholder="Mensaje" id="request" style="height: 140px" formControlName="request"></textarea>
+                <textarea class="form-control request-textarea" placeholder="Mensaje" id="request" formControlName="request"></textarea>
                 <label for="request">Mensaje detallando el requerimiento</label>
               </div>
             </div>
