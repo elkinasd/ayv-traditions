@@ -3,7 +3,7 @@ import { AboutComponent } from './sections/about/about.component';
 import { ServicesComponent } from './sections/services/services.component';
 import { WhyUsComponent } from './sections/why-us/why-us.component';
 import { ContactComponent } from './sections/contact/contact.component';
-import { LandinPageComponent } from './pages/landin-page/landin-page.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BriefcaseComponent } from './pages/briefcase/briefcase.component';
 import { ProcessedProductsComponent } from './sections/briefcase/processed-products/processed-products.component';
 import { UnprocessedProductsComponent } from './sections/briefcase/unprocessed-products/unprocessed-products.component';
@@ -12,7 +12,7 @@ import { UnprocessedProductsComponent } from './sections/briefcase/unprocessed-p
 export const routes: Routes = [
     {
         path: '',
-        component: LandinPageComponent
+        component: LandingPageComponent
     },
     {
         path: 'about',
@@ -49,5 +49,9 @@ export const routes: Routes = [
                 pathMatch: 'full'
             }
         ]
+    },
+    {
+        path: 'crm',
+        loadComponent: () => import('./pages/crm/crm.component').then(m => m.CrmComponent)
     }
 ];

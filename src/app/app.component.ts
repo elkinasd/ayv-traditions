@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { LandinPageComponent } from "./pages/landin-page/landin-page.component";
+import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { PerformanceService } from './services/performance.service';
 
 // Declarar gtag como función global
@@ -14,7 +14,7 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LandinPageComponent],
+  imports: [RouterOutlet, LandingPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

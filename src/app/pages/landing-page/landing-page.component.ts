@@ -26,10 +26,10 @@ import { AnalyticsService } from '../../services/analytics.service';
     ScrollToTopComponent,
     // UnderConstructionComponent
   ],
-  templateUrl: './landin-page.component.html',
-  styleUrl: './landin-page.component.scss'
+  templateUrl: './landing-page.component.html',
+  styleUrl: './landing-page.component.scss'
 })
-export class LandinPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit {
 
   constructor(
     private seoService: SeoService,
