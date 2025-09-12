@@ -49,9 +49,5 @@ export const routes: Routes = [
                 pathMatch: 'full'
             }
         ]
-    },
-    {
-        path: 'crm',
-        loadComponent: () => import('./pages/crm/crm.component').then(m => m.CrmComponent)
     }
 ];
