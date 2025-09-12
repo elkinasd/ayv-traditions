@@ -1,13 +1,25 @@
 @use '../../shared/global-styles.scss' as *;
 
-#contact {
-  min-height: 100vh;
-}
+#contact { min-height: 100vh; }
 
 .contact-card {
+  position: relative;
   border: 2px solid $avt-orange;
   background-color: $avt-navy;
   color: $avt-white;
+}
+
+/* Overlay de carga sutil y profesional */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem; /* coincide con rounded-4 */
+  background-color: rgba($avt-navy, 0.6);
+  color: $avt-white;
+  z-index: 10;
 }
 
 .contact-info {

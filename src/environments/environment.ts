@@ -1,6 +1,7 @@
 // https://www.builder.io/c/docs/using-your-api-key
 export const environment = {
   production: false,
+  baseUrl: 'https://eqpdmj6im2klvloxuliqf4s2he0shnfw.lambda-url.us-east-1.on.aws',
   builderApiKey: "b921442d76744459bd6fe2f22b8ea598",
 
   // SEO Configuration
@@ -18,5 +19,11 @@ export const environment = {
     googleAnalyticsId: 'G-MEXTXVKSQL', // ID real de Google Analytics corregido
     enableDebug: true, // Solo para development
     enablePerformanceMonitoring: true
+  },
+
+  //Endpoints
+  mail: {
+    contact: '/contact'
   }
+
 };
