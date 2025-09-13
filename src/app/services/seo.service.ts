@@ -90,14 +90,4 @@ export class SeoService {
       image: environment.seo.defaultImage
     });
   }
-
-  setUnderConstructionSEO() {
-    this.updateMetaTags({
-      title: 'Sitio en Construcción - A&V Traditions',
-      description: 'Estamos mejorando nuestro sitio web para ofrecerte la mejor experiencia. Pronto estaremos de vuelta.',
-      keywords: 'en construcción, mantenimiento, A&V Traditions',
-      url: environment.seo.baseUrl,
-      image: environment.seo.defaultImage
-    });
-  }
 }

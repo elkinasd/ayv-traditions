@@ -26,10 +26,5 @@ export class BriefcaseComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // SEO para página en construcción
-    this.seoService.setUnderConstructionSEO();
-
-    // Analytics tracking
-    this.analytics.trackUnderConstructionPage();
   }
 }

@@ -106,8 +106,4 @@ export class AnalyticsService {
     this.trackPageView('/portafolio/no-procesados', 'Productos Sin Procesar - A&V Traditions');
     this.trackPortfolioView('unprocessed');
   }
-
-  trackUnderConstructionPage() {
-    this.trackPageView('/', 'Sitio en Construcción - A&V Traditions');
-  }
 }
