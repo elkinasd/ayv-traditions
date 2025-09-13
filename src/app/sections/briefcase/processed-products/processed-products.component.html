@@ -1,153 +1,207 @@
 <div class="processed-products-container mt-5">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center mb-5">
-                    <h2>Nuestros productos procesados</h2>
-                    <p class="lead text-muted">
-                        Nuestra selección premium de productos agrícolas procesados listos
-                        para el comercio internacional
-                    </p>
-                </div>
-            </div>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center mb-5">
+          <h2>Nuestros productos procesados</h2>
+          <p class="lead text-muted">
+            Nuestra selección premium de productos agrícolas procesados listos
+            para el comercio internacional
+          </p>
         </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col" *ngFor="let processedProduct of processedProducts">
-                <div class="card h-100">
-                    <img [src]="processedProduct.image" class="card-img-top" alt="..." height="220px" />
-                    <div class="card-body">
-                        <h5 class="card-title">{{ processedProduct.title }}</h5>
-                        <p class="card-text">{{ processedProduct.description }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="text-center mb-5">
-                    <h3>¿Necesitas uno de nuestros productos?</h3>
-                    <p class="lead text-muted">Ponte en contacto</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#contactUsModal">
-                        Contáctanos
-                    </button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let processedProduct of processedProducts; index as i">
+        <div class="card h-100">
+          <img [src]="processedProduct.image" class="card-img-top" alt="..." height="220px" />
+          <div class="card-body">
+            <h5 class="card-title">{{ processedProduct.title }}</h5>
+            <p class="card-text">{{ processedProduct.description }}</p>
+          </div>
+          <div class="d-flex justify-content-center mb-2">
+            <button (click)="selectedProduct = processedProduct" type="button" class="btn btn-primary"
+              data-bs-toggle="modal" data-bs-target="#productModal">
+              Conocer más
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="text-center mb-5">
+          <h3>¿Necesitas uno de nuestros productos?</h3>
+          <p class="lead text-muted">Ponte en contacto</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactUsModal">
+            Contáctanos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="modal fade" id="productModal" #productModal>
+  <div class="modal-dialog productModal" role="document">
+    <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
+      <div class="modal-header">
+        <h5> {{ selectedProduct?.title }} </h5>
+      </div>
+      <div class="modal-body">
+        <img [src]="selectedProduct?.image" class="img-fluid mb-3" [alt]="selectedProduct?.title">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being
+                filled with some actual content.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal contacto -->
 <div class="modal fade" id="contactUsModal" #contactUsModal>
-    <div class="modal-dialog">
-        <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
-            <form  [formGroup]="contactUsForm" (ngSubmit)="contactUs()">
-          <div class="row g-3">
-            <div class="col-12">
-              <div class="form-floating">
-                <input type="text" class="form-control" id="fullName" placeholder="Nombre Completo" required formControlName="fullName">
-                <label for="fullName">Nombre completo</label>
-                <div class="invalid-feedback">Tu nombre es requerido.</div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="form-floating">
-                <input type="text" class="form-control" id="company-name" placeholder="Nombre de la Empresa" formControlName="companyName">
-                <label for="company-name">Nombre de la empresa</label>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required formControlName="email">
-                <label for="email">Correo electrónico</label>
-                <div class="invalid-feedback">Ingresa un correo válido.</div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <div class="form-floating">
-                <input type="tel" class="form-control" id="phone" placeholder="Teléfono" formControlName="phone">
-                <label for="phone">Teléfono</label>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <div class="form-floating">
-                <select class="form-select" id="issue" required formControlName="issue">
-                  <option value="" disabled selected>Seleccione una opción</option>
-                  <option value="solicitud">Solicitud</option>
-                  <option value="cotizacion">Cotización</option>
-                  <option value="queja">Queja</option>
-                  <option value="llamada">Llamada</option>
-                </select>
-                <label for="issue">Asunto</label>
-                <div class="invalid-feedback">Selecciona un asunto.</div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <div class="form-floating">
-                <select class="form-select" id="channel" required formControlName="channel">
-                  <option value="" disabled selected>Seleccione un medio</option>
-                  <option value="whatsapp">WhatsApp</option>
-                  <option value="email">Email</option>
-                </select>
-                <label for="channel">Medio de contacto</label>
-                <div class="invalid-feedback">Selecciona un medio.</div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="form-floating">
-                <textarea class="form-control request-textarea" placeholder="Mensaje" id="request" formControlName="request"></textarea>
-                <label for="request">Mensaje detallando el requerimiento</label>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="terms" required formControlName="terms">
-                <label class="form-check-label" for="terms">
-                  Acepto el tratamiento de datos personales
-                </label>
-                <div class="invalid-feedback">Debes aceptar los términos.</div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="d-grid col-8 col-md-6 mx-auto">
-                <button [disabled]="loading || contactUsForm.invalid" type="submit" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2">
-                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
-                  <span>{{ loading ? 'Enviando…' : 'Enviar' }}</span>
-                </button>
-              </div>
+  <div class="modal-dialog">
+    <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
+      <form [formGroup]="contactUsForm" (ngSubmit)="contactUs()">
+        <div class="row g-3">
+          <div class="col-12">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="fullName" placeholder="Nombre Completo" required
+                formControlName="fullName">
+              <label for="fullName">Nombre completo</label>
+              <div class="invalid-feedback">Tu nombre es requerido.</div>
             </div>
           </div>
-        </form>
+
+          <div class="col-12">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="company-name" placeholder="Nombre de la Empresa"
+                formControlName="companyName">
+              <label for="company-name">Nombre de la empresa</label>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required
+                formControlName="email">
+              <label for="email">Correo electrónico</label>
+              <div class="invalid-feedback">Ingresa un correo válido.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="form-floating">
+              <input type="tel" class="form-control" id="phone" placeholder="Teléfono" formControlName="phone">
+              <label for="phone">Teléfono</label>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="form-floating">
+              <select class="form-select" id="issue" required formControlName="issue">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="solicitud">Solicitud</option>
+                <option value="cotizacion">Cotización</option>
+                <option value="queja">Queja</option>
+                <option value="llamada">Llamada</option>
+              </select>
+              <label for="issue">Asunto</label>
+              <div class="invalid-feedback">Selecciona un asunto.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="form-floating">
+              <select class="form-select" id="channel" required formControlName="channel">
+                <option value="" disabled selected>Seleccione un medio</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="email">Email</option>
+              </select>
+              <label for="channel">Medio de contacto</label>
+              <div class="invalid-feedback">Selecciona un medio.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-floating">
+              <textarea class="form-control request-textarea" placeholder="Mensaje" id="request"
+                formControlName="request"></textarea>
+              <label for="request">Mensaje detallando el requerimiento</label>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terms" required formControlName="terms">
+              <label class="form-check-label" for="terms">
+                Acepto el tratamiento de datos personales
+              </label>
+              <div class="invalid-feedback">Debes aceptar los términos.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="d-grid col-8 col-md-6 mx-auto">
+              <button [disabled]="loading || contactUsForm.invalid" type="submit"
+                class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                <span>{{ loading ? 'Enviando…' : 'Enviar' }}</span>
+              </button>
+            </div>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>
 
-<app-alerts *ngIf="successMsg"
-            type="success"
-            title="¡Éxito!"
-            [message]="successMsg"
-            [autoClose]="true"
-            [autoCloseDelay]="4000"
-            [showLogo]="true"
-            [position]="'top-right'"
-            (closed)="onCloseSuccess()">
+<app-alerts *ngIf="successMsg" type="success" title="¡Éxito!" [message]="successMsg" [autoClose]="true"
+  [autoCloseDelay]="4000" [showLogo]="true" [position]="'top-right'" (closed)="onCloseSuccess()">
 </app-alerts>
 
-<app-alerts *ngIf="errorMsg"
-            type="error"
-            title="Ocurrió un problema"
-            [message]="errorMsg"
-            [dismissible]="true"
-            [position]="'top-right'"
-            (closed)="onCloseError()">
+<app-alerts *ngIf="errorMsg" type="error" title="Ocurrió un problema" [message]="errorMsg" [dismissible]="true"
+  [position]="'top-right'" (closed)="onCloseError()">
 </app-alerts>

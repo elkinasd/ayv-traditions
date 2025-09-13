@@ -16,7 +16,7 @@ import { AlertsComponent } from '../../../shared/alerts/alerts.component';
 export class ProcessedProductsComponent {
 
   @ViewChild('contactUsModal') contactUsModal!: ElementRef;
-
+  selectedProduct?: { image: string, title: string, description: string };
   processedProducts: { image: string, title: string, description: string, }[] = [
     {
       image: 'sugar.jpg',
