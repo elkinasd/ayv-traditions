@@ -5,13 +5,13 @@ declare const bootstrap: any;
 
 
 @Component({
-  selector: 'app-navbar-briefcase',
+  selector: 'app-navbar-products',
   standalone: true,
   imports: [ RouterModule ],
-  templateUrl: './navbar-briefcase.component.html',
-  styleUrl: './navbar-briefcase.component.scss'
+  templateUrl: './navbar-products.component.html',
+  styleUrl: './navbar-products.component.scss'
 })
-export class NavbarBriefcaseComponent {
+export class NavbarProductsComponent {
 @ViewChild('offcanvasRef') offcanvasRef!: ElementRef;
 
 route = inject(Router);

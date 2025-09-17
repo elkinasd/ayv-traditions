@@ -23,6 +23,15 @@
     }
   }
 
+  .navbar-brand{
+    color: $avt-white;
+       &:hover {
+      color: $avt-orange;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
   .nav-link {
     color: $avt-light-gray;
     font-weight: 500;

@@ -150,3 +150,13 @@ section {
     transform: translateY(-5px);
   }
 }
+
+.card-no-hover {
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-0px);
+  }
+}

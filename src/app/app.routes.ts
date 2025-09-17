@@ -4,10 +4,11 @@ import { ServicesComponent } from './sections/services/services.component';
 import { WhyUsComponent } from './sections/why-us/why-us.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { BriefcaseComponent } from './pages/briefcase/briefcase.component';
-import { ProcessedProductsComponent } from './sections/briefcase/processed-products/processed-products.component';
-import { UnprocessedProductsComponent } from './sections/briefcase/unprocessed-products/unprocessed-products.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProcessedProductsComponent } from './pages/products/processed-products/processed-products.component';
+import { UnprocessedProductsComponent } from './pages/products/unprocessed-products/unprocessed-products.component';
+import { ProductsLayoutComponent } from './pages/products/products-layout/products-layout.component';
 
 
 export const routes: Routes = [
@@ -33,9 +34,13 @@ export const routes: Routes = [
         component: ContactComponent
     },
     {
-        path: 'briefcase',
-        component: BriefcaseComponent,
+        path: 'products',
+        component: ProductsLayoutComponent, 
         children: [
+            {
+                path: '',
+                component: ProductsComponent 
+            },
             {
                 path: 'processed-products',
                 component: ProcessedProductsComponent
@@ -45,12 +50,13 @@ export const routes: Routes = [
                 component: UnprocessedProductsComponent
             },
             {
-                path: '',
-                redirectTo: 'processed-products',
+                path: '**',
+                redirectTo: '',
                 pathMatch: 'full'
             }
         ]
-    },
-    { path: '**', component: NotFoundComponent }, 
+    }
+    ,
+    { path: '**', component: NotFoundComponent },
 
 ];

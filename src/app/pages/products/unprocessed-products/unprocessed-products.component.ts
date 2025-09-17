@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ContactComponent } from '../../contact/contact.component';
+import { ContactComponent } from '../../../sections/contact/contact.component';
 import { ContactService } from '../../../services/contact.service';
 import { AlertsComponent } from '../../../shared/alerts/alerts.component';
 
