@@ -7,6 +7,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { BriefcaseComponent } from './pages/briefcase/briefcase.component';
 import { ProcessedProductsComponent } from './sections/briefcase/processed-products/processed-products.component';
 import { UnprocessedProductsComponent } from './sections/briefcase/unprocessed-products/unprocessed-products.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 export const routes: Routes = [
@@ -49,5 +50,7 @@ export const routes: Routes = [
                 pathMatch: 'full'
             }
         ]
-    }
+    },
+    { path: '**', component: NotFoundComponent }, 
+
 ];
