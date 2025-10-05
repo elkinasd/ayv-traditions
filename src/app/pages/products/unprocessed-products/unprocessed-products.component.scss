@@ -5,6 +5,11 @@
   min-height: 100vh;
 }
 
+.btn-box{
+  display: flex;
+  justify-content: center;
+}
+
 .contact-card {
   border: 2px solid $avt-orange;
   background-color: $avt-navy;

@@ -32,6 +32,19 @@ body {
   }
 }
 
+.btn-secondary {
+  background-color: $avt-medium-gray;
+  border-color: $avt-navy-form;
+  font-weight: 600;
+  padding: 12px 24px;
+  &:hover {
+    background-color: darken($avt-navy-form, 10%);
+    border-color: darken($avt-navy-form, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+
 .btn-outline-primary {
   color: $avt-navy;
   border-color: $avt-navy;

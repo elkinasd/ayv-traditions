@@ -11,20 +11,20 @@
         </div>
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col" *ngFor="let processedProduct of processedProducts; index as i">
         <div class="card h-100">
-          <img [src]="processedProduct.image" class="card-img-top" alt="..." height="220px" />
+          <img [src]="processedProduct.image" class="card-img-top" alt="..." height="280px" />
           <div class="card-body">
             <h5 class="card-title">{{ processedProduct.title }}</h5>
             <p class="card-text">{{ processedProduct.description }}</p>
           </div>
-          <div class="d-flex justify-content-center mb-2">
-            <button (click)="selectedProduct = processedProduct" type="button" class="btn btn-primary"
-              data-bs-toggle="modal" data-bs-target="#productModal">
-              Conocer más
-            </button>
-          </div>
+            <div class="d-flex justify-content-center mb-2">
+              <button (click)="selectedProduct = processedProduct" type="button" class="btn btn-primary"
+                data-bs-toggle="modal" data-bs-target="#productModal">
+                Conocer más
+              </button>
+            </div>
         </div>
       </div>
     </div>
@@ -43,52 +43,34 @@
   </div>
 </div>
 
-<div class="modal fade" id="productModal" #productModal>
-  <div class="modal-dialog productModal" role="document">
+<div class="modal fade" id="productModal" #productModal data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-lg productModal" role="document">
     <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
       <div class="modal-header">
         <h5> {{ selectedProduct?.title }} </h5>
       </div>
       <div class="modal-body">
-        <img [src]="selectedProduct?.image" class="img-fluid mb-3" [alt]="selectedProduct?.title">
+        <div class="d-flex align-items-center justify-content-center">
+          <img [src]="selectedProduct?.image" class="img-fluid mb-3 " width="350px" [alt]="selectedProduct?.title">
+        </div>
+        <p class="card-text">{{ selectedProduct?.description }}</p>
         <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
+          <div class="accordion-item" *ngFor="let child of selectedProduct?.children; index as i">
+            <h2 class="accordion-header" id="flush-heading{{i}}">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Accordion Item #1
+                [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
+                [attr.aria-controls]="'flush-collapse' + i">
+                {{ child.title }}
               </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Accordion Item #2
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being
-                filled with some actual content.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Accordion Item #3
-              </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.</div>
+            <div [id]="'flush-collapse' + i" class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>{{ child.description }}</p>
+              </div>
+              <div class="accordion-footer d-flex align-items-center justify-content-center">
+                <img [src]="child?.image" class="img-fluid mb-3" width="350px" [alt]="selectedProduct?.title">
+              </div>
             </div>
           </div>
         </div>
@@ -183,12 +165,15 @@
             </div>
           </div>
 
-          <div class="col-12">
-            <div class="d-grid col-8 col-md-6 mx-auto">
-              <button [disabled]="loading || contactUsForm.invalid" type="submit"
-                class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2">
+          <div class="col-12 btn-box">
+            <div class="mx-5 d-flex gap-3 justify-content-center align-items-center">
+              <button [disabled]="loading || contactUsForm.invalid" type="submit" class="btn btn-primary btn-lg">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
                 <span>{{ loading ? 'Enviando…' : 'Enviar' }}</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal"
+                (click)="contactUsForm.reset()">
+                <span>Cancelar</span>
               </button>
             </div>
           </div>
