@@ -37,21 +37,8 @@ export class UnprocessedProductsComponent implements OnDestroy {
   }[] = [
       {
         id: 1,
-        image: 'sugar.jpg',
-        title: `Azúcares y derivados`,
-        description: `Incluye azúcares de diferentes grados ICUMSA, panela y melazas con altos estándares de pureza y calidad para exportación.`,
-        children: [
-          { id: 1, title: 'Azúcar ICUMSA 45', description: 'Azúcar blanca refinada premium (máx. 45 IU), altamente demandada en mercados internacionales para bebidas, confitería y farmacéutica.' },
-          { id: 2, title: 'Azúcar ICUMSA 100', description: 'Azúcar blanca estándar, con buena pureza y color intermedio, utilizada en alimentos procesados y consumo directo.' },
-          { id: 3, title: 'Azúcar ICUMSA 150', description: 'Azúcar cristal blanco, muy usado en panadería y repostería, con tonalidad ligeramente más oscura que la ICUMSA 45.' },
-          { id: 4, title: 'Azúcar ICUMSA 600–800 (VHP)', description: 'Azúcar morena cruda de alta polarización (>99.4%). Se exporta a refinerías internacionales para ser procesada a grado consumo.' },
-          { id: 5, title: 'Azúcar ICUMSA 1200 (Raw)', description: 'Azúcar cruda sin refinar, conserva parte de la melaza. Usada en refinerías y en la producción de ron, etanol y derivados.' }
-        ]
-      },
-      {
-        id: 2,
         image: 'fruits.jpg',
-        title: `Frutas procesadas`,
+        title: `Frutas`,
         description: `Pulpa, jugos concentrados y frutas deshidratadas de origen tropical, listas para la industria internacional.`,
         children: [
           { id: 6, title: 'Pulpa de mango', description: 'Pulpa congelada de mango colombiano, ideal para jugos, néctares, helados y postres.' },
@@ -62,9 +49,9 @@ export class UnprocessedProductsComponent implements OnDestroy {
         ]
       },
       {
-        id: 3,
+        id: 2,
         image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3',
-        title: `Café y cacao procesados`,
+        title: `Café y cacao`,
         description: `Café tostado, molido y soluble, además de cacao en polvo y chocolates, reconocidos por su calidad de origen colombiano.`,
         children: [
           { id: 11, title: 'Café tostado en grano', description: 'Granos de café 100% arábica, seleccionados y tostados, listos para barismo y exportación gourmet.' },
@@ -75,9 +62,9 @@ export class UnprocessedProductsComponent implements OnDestroy {
         ]
       },
       {
-        id: 4,
+        id: 3,
         image: 'beans.jpg',
-        title: `Granos y cereales transformados`,
+        title: `Granos y cereales`,
         description: `Harinas y derivados de maíz, arroz, avena y quinua, que aportan valor agregado a la panadería, bebidas y alimentos balanceados.`,
         children: [
           { id: 16, title: 'Harina de maíz', description: 'Ingrediente principal en arepas, tortillas y snacks. Exportada a mercados latinoamericanos y europeos.' },
@@ -88,7 +75,7 @@ export class UnprocessedProductsComponent implements OnDestroy {
         ]
       },
       {
-        id: 5,
+        id: 4,
         image: 'tuberculos.webp',
         title: `Tubérculos`,
         description: `Tubérculos empacados al vacío y derivados procesados, listos para exportación.`,
@@ -113,10 +100,10 @@ export class UnprocessedProductsComponent implements OnDestroy {
   constructor() { }
   ngOnInit() { this.initForm(); }
 
-  ngOnDestroy(): void { this.closeOpenModals(); }
+  ngOnDestroy(): void { this.dismissModals(); }
 
   @HostListener('window:popstate')
-  onBrowserBack(): void { this.closeOpenModals(); }
+  onBrowserBack(): void { this.dismissModals(); }
 
   initForm() {
     this.contactUsForm = this.fb.group({
@@ -162,41 +149,25 @@ export class UnprocessedProductsComponent implements OnDestroy {
   onCloseSuccess() { this.successMsg = ''; }
   onCloseError() { this.errorMsg = ''; }
 
-  // ...existing code...
-
   private hideModal() {
-    this.forceCloseModal(this.contactUsModal);
+    this.hideBootstrapModal(this.contactUsModal);
   }
 
-  private closeOpenModals(): void {
-    this.forceCloseModal(this.productModal);
-    this.forceCloseModal(this.contactUsModal);
+  private dismissModals(): void {
+    this.hideBootstrapModal(this.productModal);
+    this.hideBootstrapModal(this.contactUsModal);
   }
 
-  private forceCloseModal(modalRef?: ElementRef<HTMLDivElement>): void {
+  private hideBootstrapModal(modalRef?: ElementRef<HTMLDivElement>): void {
     const element = modalRef?.nativeElement;
     if (!element || typeof window === 'undefined') {
       return;
     }
-    const bs = (window as any)?.bootstrap;
-    if (bs?.Modal) {
-      const instance = bs.Modal.getInstance(element) || new bs.Modal(element);
-      instance.hide();
-    }
-    element.classList.remove('show');
-    element.setAttribute('aria-hidden', 'true');
-    element.style.display = 'none';
-    this.cleanupModalArtifacts();
-  }
-
-  private cleanupModalArtifacts(): void {
-    if (typeof document === 'undefined') {
+    const modalCtor = (window as any).bootstrap?.Modal;
+    if (!modalCtor) {
       return;
     }
-    const body = document.body;
-    body.classList.remove('modal-open');
-    body.style.removeProperty('padding-right');
-    body.style.removeProperty('overflow');
-    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+    const instance = typeof modalCtor.getInstance === 'function' ? modalCtor.getInstance(element) : null;
+    (instance ?? new modalCtor(element)).hide();
   }
 }

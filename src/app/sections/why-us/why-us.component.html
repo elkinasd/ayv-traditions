@@ -3,42 +3,53 @@
     <div class="row">
       <div class="col-lg-12 text-center mb-3">
         <h2 class="display-5 fw-bold mb-4">¿Por qué elegirnos?</h2>
-        <p class="lead">Experimente la diferencia que viene con la tradición,
-          la innovación y el compromiso inquebrantable con la excelencia.
+        <p class="lead">
+          Experimente la diferencia que viene con la tradición, la innovación y
+          el compromiso inquebrantable con la excelencia.
         </p>
       </div>
     </div>
     <div class="row g-4 align-items-start">
       <div class="col-12 col-lg-6">
         <p>
-          Porque en A&V Traditions no solo movemos productos, sino historias y confianza. Unimos la tradición de
-          nuestros productores con la precisión de la logística moderna para que cada envío llegue con la misma calidad
-          con la que salió de origen. Creemos en relaciones comerciales duraderas, en el poder de la información para
-          tomar mejores decisiones y en el valor de representar la riqueza de Colombia en cada transacción. Con
-          nosotros, tu negocio no es uno más: es un socio estratégico en el comercio global.
+          Porque en A&V Traditions no solo movemos productos, sino historias y
+          confianza. Unimos la tradición de nuestros productores con la
+          precisión de la logística moderna para que cada envío llegue con la
+          misma calidad con la que salió de origen. Creemos en relaciones
+          comerciales duraderas, en el poder de la información para tomar
+          mejores decisiones y en el valor de representar la riqueza de Colombia
+          en cada transacción. Con nosotros, tu negocio no es uno más: es un
+          socio estratégico en el comercio global.
         </p>
-
-        <div class="col-12 col-lg-12">
-          <div class="row gy-3">
-            <div *ngFor="let service of services" class="col-12 col-sm-6 col-md-4">
-              <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
-                <div class="icon-wrapper d-flex align-items-center justify-content-center round">
-                  <span class="material-icons" [ngStyle]="{ color: service.color }">
-                    {{ service.icon }}
-                  </span>
-                </div>
-                <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
-              </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="p-4 p-md-5 rounded-4 bg-white shadow time-line">
+          <h3 class="text-center">Nuestro Proceso de Comercio Internacional</h3>
+          <div class="timeline-container d-flex justify-content-between align-items-center flex-wrap py-4 px-2">
+            <div class="timeline-step text-center grass">
+              <span class="material-icons bg-light p-3 rounded-circle shadow">grass</span>
+              <p class="fw-semibold mt-2">Producción</p>
+            </div>
+            <div class="timeline-step text-center inventory_2">
+              <span class="material-icons bg-light p-3 rounded-circle shadow">inventory_2</span>
+              <p class="fw-semibold mt-2">Acopio</p>
+            </div>
+            <div class="timeline-step text-center directions_boat">
+              <span class="material-icons bg-light p-3 rounded-circle shadow">directions_boat</span>
+              <p class="fw-semibold mt-2">Exportación</p>
+            </div>
+            <div class="timeline-step text-center public">
+              <span class="material-icons bg-light p-3 rounded-circle shadow">public</span>
+              <p class="fw-semibold mt-2">Distribución</p>
+            </div>
+            <div class="timeline-step text-center handshake">
+              <span class="material-icons bg-light p-3 rounded-circle shadow">handshake</span>
+              <p class="fw-semibold mt-2">Comercio</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-6">
-        <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
-
-        </div>
-      </div>
     </div>
-    
+
   </div>
 </section>

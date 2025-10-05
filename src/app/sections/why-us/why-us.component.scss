@@ -3,6 +3,62 @@
 #why-us {
   min-height: 100vh;
 }
-.bgColor{
+
+.bgColor {
   border: 1px solid black;
+}
+
+.grass {
+  color: #4CAF50;
+}
+
+.inventory_2 {
+  color: #388E3C;
+}
+
+.directions_boat {
+  color: #1976D2;
+}
+
+.public {
+  color: #FBC02D;
+}
+
+.handshake {
+  color: #E64A19;
+}
+
+.timeline-step {
+  position: relative;
+  text-align: center;
+}
+
+.timeline-step::after {
+  content: "→";
+  position: absolute;
+  right: -20px;
+  top: 25%;
+  font-size: 20px;
+  color: #999;
+}
+
+.timeline-step:last-child::after {
+  content: "";
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+  }
+
+  .timeline-step {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-step::after {
+    content: "↓";
+    right: 50%;
+    top: 80%;
+    transform: translateX(50%);
+  }
 }

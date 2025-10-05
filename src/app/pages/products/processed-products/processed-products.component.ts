@@ -38,11 +38,11 @@ export class ProcessedProductsComponent implements OnDestroy {
         title: `Azúcares y derivados`,
         description: `Incluye azúcares de diferentes grados ICUMSA, panela y melazas con altos estándares de pureza y calidad para exportación.`,
         children: [
-          { id: 1, title: `Azúcar ICUMSA 45`, description: `Azúcar blanca refinada premium (máx. 45 IU), altamente demandada en mercados internacionales para bebidas, confitería y farmacéutica.` },
-          { id: 2, title: `Azúcar ICUMSA 100`, description: `Azúcar blanca estándar, con buena pureza y color intermedio, utilizada en alimentos procesados y consumo directo.` },
-          { id: 3, title: `Azúcar ICUMSA 150`, description: `Azúcar cristal blanco, muy usado en panadería y repostería, con tonalidad ligeramente más oscura que la ICUMSA 45.` },
-          { id: 4, title: `Azúcar ICUMSA 600–800 (VHP)`, description: `Azúcar morena cruda de alta polarización (>99.4%). Se exporta a refinerías internacionales para ser procesada a grado consumo.` },
-          { id: 5, title: `Azúcar ICUMSA 1200 (Raw)`, description: `Azúcar cruda sin refinar, conserva parte de la melaza. Usada en refinerías y en la producción de ron, etanol y derivados.` }
+          { id: 1, title: `Azúcar ICUMSA 45`, image: `sugar/sugar.jpg`, description: `Azúcar blanca refinada premium (máx. 45 IU), altamente demandada en mercados internacionales para bebidas, confitería y farmacéutica.` },
+          { id: 2, title: `Azúcar ICUMSA 100`, image: `sugar/sugar.jpg`, description: `Azúcar blanca estándar, con buena pureza y color intermedio, utilizada en alimentos procesados y consumo directo.` },
+          { id: 3, title: `Azúcar ICUMSA 150`, image: `sugar/sugar.jpg`, description: `Azúcar cristal blanco, muy usado en panadería y repostería, con tonalidad ligeramente más oscura que la ICUMSA 45.` },
+          { id: 4, title: `Azúcar ICUMSA 600–800 (VHP)`, image: `sugar/sugar.jpg`, description: `Azúcar morena cruda de alta polarización (>99.4%). Se exporta a refinerías internacionales para ser procesada a grado consumo.` },
+          { id: 5, title: `Azúcar ICUMSA 1200 (Raw)`, image: `sugar/sugar.jpg`, description: `Azúcar cruda sin refinar, conserva parte de la melaza. Usada en refinerías y en la producción de ron, etanol y derivados.` }
         ]
       },
       {
@@ -53,11 +53,11 @@ export class ProcessedProductsComponent implements OnDestroy {
         children: [
           { id: 6, title: `Banano`, image: `fruits/banano.png`, description: `Fruta alargada de cáscara amarilla suave y pulpa cremosa, dulce y ligera. Al morderla se siente fresca, saciante y naturalmente energética, perfecta para comer sola o mezclar en preparaciones.` },
           { id: 7, title: `Borojó`, image: `fruits/borojo.png`, description: `Tiene una pulpa espesa de color marrón oscuro y un sabor intenso, entre ácido y dulce, que llena la boca con notas profundas. Su textura densa y su aroma fuerte la hacen inconfundible en bebidas o preparaciones tradicionales.` },
-          { id: 8, title: `Ciruela`, image: `fruits/Ciruela.png`, description: `Pequeña y redonda, con piel brillante que va del rojo al morado. Al morderla, la pulpa jugosa libera un sabor dulce con un toque ácido que la vuelve refrescante y ligera.` },
+          { id: 8, title: `Ciruela`, image: `fruits/ciruela.png`, description: `Pequeña y redonda, con piel brillante que va del rojo al morado. Al morderla, la pulpa jugosa libera un sabor dulce con un toque ácido que la vuelve refrescante y ligera.` },
           { id: 9, title: `Corozo`, image: `fruits/corozo.png`, description: `Fruta pequeña de color rojo intenso, de piel firme y pulpa jugosa. Su sabor es ácido con un leve dulzor, ideal para jugos frescos que despiertan el paladar.` },
           { id: 10, title: `Curuba`, image: `fruits/curuba.png`, description: `Fruta alargada de cáscara delgada y suave. Por dentro guarda una pulpa anaranjada llena de semillas pequeñas, con un sabor delicado, ligeramente ácido y muy aromático.` },
           { id: 11, title: `Durazno`, image: `fruits/durazno.png`, description: `Fruta redonda de piel aterciopelada y pulpa jugosa de color amarillo. Su sabor es dulce con un ligero toque ácido, y al comerla se siente suave y refrescante.` },
-          { id: 12, title: `Feijoa`, image: `fruits/Feijoa.png`, description: `Fruta ovalada de piel verde y aroma intenso que se percibe apenas se abre. Su pulpa es suave, con un sabor dulce y ácido a la vez, muy particular y perfumado.` },
+          { id: 12, title: `Mango`, image: `fruits/mango.png`, description: `Fruta tropical de forma ovalada o alargada, con piel lisa de tonos que van del verde al amarillo o rojizo. Su pulpa es de un amarillo intenso, jugosa, fibrosa y muy aromática. Al morderla libera un sabor dulce y exótico con un toque ácido sutil, refrescante y envolvente, ideal para jugos, postres o disfrutarla al natural.` },
           { id: 13, title: `Fresa`, image: `fruits/fresas.png`, description: `Fruta pequeña de color rojo brillante, con un aroma dulce que se siente desde lejos. Su pulpa es jugosa y suave, con un sabor equilibrado entre dulce y ligeramente ácido.` },
           { id: 14, title: `Guanábana`, image: `fruits/guanabana.png`, description: `Fruta grande y espinosa por fuera, pero blanca y cremosa por dentro. Su pulpa tiene un sabor suave, dulce y refrescante, con un toque ácido muy agradable.` },
           { id: 15, title: `Guayaba`, image: `fruits/guayaba.png`, description: `Fruta redonda o alargada, de piel verde o amarilla y pulpa rosada o blanca con pequeñas semillas. Su sabor es intenso y aromático, combinando dulzura con un toque ácido característico.` },
@@ -88,11 +88,10 @@ export class ProcessedProductsComponent implements OnDestroy {
         title: `Café y cacao procesados`,
         description: `Café tostado, molido y soluble, además de cacao en polvo y chocolates, reconocidos por su calidad de origen colombiano.`,
         children: [
-          { id: 11, title: `Café tostado en grano`, description: `Granos de café 100% arábica, seleccionados y tostados, listos para barismo y exportación gourmet.` },
-          { id: 12, title: `Café molido`, description: `Café de origen colombiano, molido fino o medio, apto para métodos tradicionales e industriales.` },
-          { id: 13, title: `Café soluble`, description: `Café instantáneo de alta calidad, práctico y con gran aceptación en mercados internacionales.` },
-          { id: 14, title: `Cacao en polvo`, description: `Cacao natural y alcalinizado, usado en repostería, bebidas y alimentos industriales.` },
-          { id: 15, title: `Chocolate en barras y coberturas`, description: `Productos de cacao colombiano con alto porcentaje de pureza, listos para uso industrial o consumo directo.` }
+          { id: 11, title: `Café tostado en grano`, image: `coffee/coffee-beans.png`, description: `Granos de café 100% arábica, seleccionados y tostados, listos para barismo y exportación gourmet.` },
+          { id: 12, title: `Café molido`, image: `coffee/coffee-beans-on-ground.png`, description: `Café de origen colombiano, molido fino o medio, apto para métodos tradicionales e industriales.` },
+          { id: 14, title: `Cacao en polvo`, image: `coffee/cacao-polvo.png`, description: `Cacao natural y alcalinizado, usado en repostería, bebidas y alimentos industriales.` },
+          { id: 15, title: `Chocolate en barras`, image: `coffee/chocolate.png`, description: `Productos de cacao colombiano con alto porcentaje de pureza, listos para uso industrial o consumo directo.` }
         ]
       },
       {
@@ -133,10 +132,10 @@ export class ProcessedProductsComponent implements OnDestroy {
   constructor() { }
   ngOnInit() { this.initForm(); }
 
-  ngOnDestroy(): void { this.closeOpenModals(); }
+  ngOnDestroy(): void { this.dismissModals(); }
 
   @HostListener('window:popstate')
-  onBrowserBack(): void { this.closeOpenModals(); }
+  onBrowserBack(): void { this.dismissModals(); }
 
   initForm() {
     this.contactUsForm = this.fb.group({
@@ -183,38 +182,24 @@ export class ProcessedProductsComponent implements OnDestroy {
   onCloseError() { this.errorMsg = ''; }
 
   private hideModal() {
-    this.forceCloseModal(this.contactUsModal);
+    this.hideBootstrapModal(this.contactUsModal);
   }
 
-  private closeOpenModals(): void {
-    this.forceCloseModal(this.productModal);
-    this.forceCloseModal(this.contactUsModal);
+  private dismissModals(): void {
+    this.hideBootstrapModal(this.productModal);
+    this.hideBootstrapModal(this.contactUsModal);
   }
 
-  private forceCloseModal(modalRef?: ElementRef<HTMLDivElement>): void {
+  private hideBootstrapModal(modalRef?: ElementRef<HTMLDivElement>): void {
     const element = modalRef?.nativeElement;
     if (!element || typeof window === 'undefined') {
       return;
     }
-    const bs = (window as any)?.bootstrap;
-    if (bs?.Modal) {
-      const instance = bs.Modal.getInstance(element) || new bs.Modal(element);
-      instance.hide();
-    }
-    element.classList.remove('show');
-    element.setAttribute('aria-hidden', 'true');
-    element.style.display = 'none';
-    this.cleanupModalArtifacts();
-  }
-
-  private cleanupModalArtifacts(): void {
-    if (typeof document === 'undefined') {
+    const modalCtor = (window as any).bootstrap?.Modal;
+    if (!modalCtor) {
       return;
     }
-    const body = document.body;
-    body.classList.remove('modal-open');
-    body.style.removeProperty('padding-right');
-    body.style.removeProperty('overflow');
-    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+    const instance = typeof modalCtor.getInstance === 'function' ? modalCtor.getInstance(element) : null;
+    (instance ?? new modalCtor(element)).hide();
   }
 }
