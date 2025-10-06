@@ -10,6 +10,7 @@ $avt-light-gray: #f8f9fa;
 $avt-medium-gray: #6c757d;
 $avt-light-navy: #44759a;
 $avt-white: #FFFFFF;
+$avt-light-blue: #f5f8fb;
 
 // Estilos base globales
 body {
@@ -69,8 +70,8 @@ h2{
 // Colores de secciones (jerarquía visual mejorada)
 $hero-bg: $avt-navy;
 $about-bg: $avt-white;
-$services-bg: $avt-light-gray;
-$whyus-bg: $avt-white;
+$services-bg: $avt-white;
+$whyus-bg: $avt-light-blue;
 $contact-bg: $avt-light-gray;
 
 // Estilos globales de secciones con mejor contraste

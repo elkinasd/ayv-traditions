@@ -10,7 +10,7 @@
       </h6>
     </div>
     <div class="row g-4 align-items-start">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-8">
         <h4>Nuestra historia</h4>
         <p>
           A&V Traditions surgió de la visión de conectar los mercados globales
@@ -26,33 +26,28 @@
           continentes. Creemos en la magia de la tradición combinada con la
           eficiencia moderna.
         </p>
-        <div class="col-12 col-lg-12">
-          <div class="row gy-3">
-            <div *ngFor="let service of services" class="col-12 col-sm-6 col-md-4">
-              <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
-                <div class="icon-wrapper d-flex align-items-center justify-content-center"
-                  [ngStyle]="{ 'background-color': service.bgColor }">
-                  <span class="material-icons" [ngStyle]="{ color: service.color }">
-                    {{ service.icon }}
-                  </span>
-                </div>
-                <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
+          <p class="mt-3 text-center fst-italic text-muted">En A&V Traditions unimos la riqueza de
+            nuestra tierra con la visión global, construyendo puentes sostenibles entre productores
+            y mercados internacionales.</p>
         </div>
       </div>
-
-      <div class="col-12 col-lg-6">
-        <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="logo-navbar.png" alt="vox-umbrae" width="150px" />
+    </div>
+    <div class="col-12 col-lg-12 mt-5">
+      <div class="row gy-3">
+        <div *ngFor="let service of services" class="col-12 col-sm-12 col-md-6">
+          <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
+            <div class="icon-wrapper d-flex align-items-center justify-content-center"
+              [ngStyle]="{ 'background-color': service.bgColor }">
+              <span class="material-icons" [ngStyle]="{ color: service.color }">
+                {{ service.icon }}
+              </span>
+            </div>
+            <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
+              <p class="mb-0 text-dark">{{ service.descripcion }}</p>
           </div>
-          <h3>Conoce a <strong>Vox</strong> nuestro guía y protector</h3>
-          <p>
-            Nuestra mascota inteligente, que simboliza la sabiduría en el
-            comercio y las conexiones globales rápidas.
-          </p>
         </div>
       </div>
     </div>

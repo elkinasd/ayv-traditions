@@ -10,9 +10,9 @@
       </div>
     </div>
     <div class="row g-4 align-items-start">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-6 p-4 p-md-4">
         <p>
-          Porque en A&V Traditions no solo movemos productos, sino historias y
+          Porque en <strong>A&V Traditions</strong> no solo movemos productos, sino historias y
           confianza. Unimos la tradición de nuestros productores con la
           precisión de la logística moderna para que cada envío llegue con la
           misma calidad con la que salió de origen. Creemos en relaciones
@@ -23,9 +23,9 @@
         </p>
       </div>
       <div class="col-12 col-lg-6">
-        <div class="p-4 p-md-5 rounded-4 bg-white shadow time-line">
+        <div class="p-4 p-md-4 rounded-4 bg-white shadow time-line">
           <h3 class="text-center">Nuestro Proceso de Comercio Internacional</h3>
-          <div class="timeline-container d-flex justify-content-between align-items-center flex-wrap py-4 px-2">
+          <div class="timeline-container d-flex justify-content-between align-items-center flex-wrap px-1s">
             <div class="timeline-step text-center grass">
               <span class="material-icons bg-light p-3 rounded-circle shadow">grass</span>
               <p class="fw-semibold mt-2">Producción</p>
@@ -36,20 +36,39 @@
             </div>
             <div class="timeline-step text-center directions_boat">
               <span class="material-icons bg-light p-3 rounded-circle shadow">directions_boat</span>
-              <p class="fw-semibold mt-2">Exportación</p>
-            </div>
-            <div class="timeline-step text-center public">
-              <span class="material-icons bg-light p-3 rounded-circle shadow">public</span>
-              <p class="fw-semibold mt-2">Distribución</p>
+              <p class="fw-semibold mt-2">Trasnporte</p>
             </div>
             <div class="timeline-step text-center handshake">
               <span class="material-icons bg-light p-3 rounded-circle shadow">handshake</span>
               <p class="fw-semibold mt-2">Comercio</p>
             </div>
           </div>
+          <!-- <div class="text-center">
+            <blockquote class="blockquote">
+            <p class="mb-0 fst-italic text-crimson">
+              Conectamos la riqueza de Colombia con el mundo, paso a paso, con la precisión de un proceso diseñado para
+              crecer juntos
+            </p>
+            </blockquote>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-12 col-lg-12">
+        <h3 class="text-center mb-4">Pilares que nos distinguen</h3>
+        <div class="row gy-3">
+          <div *ngFor="let service of services" class="col-12 col-sm-6 col-md-4">
+            <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
+              <div class="icon-wrapper d-flex align-items-center justify-content-center round">
+                <span class="material-icons" [ngStyle]="{ color: service.color }">
+                  {{ service.icon }}
+                </span>
+              </div>
+              <p class="mb-2 fw-semibold text-dark">{{ service.title }}</p>
+              <p class="mb-0 text-dark">{{ service.descripcion }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
