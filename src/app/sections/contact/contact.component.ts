@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -12,7 +12,8 @@ import { AlertsComponent } from '../../shared/alerts/alerts.component';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnDestroy {
+  @ViewChild('habeasModal') habeasModal?: ElementRef<HTMLDivElement>;
   services = [
     { icon: 'email', title: 'Correo electrónico' },
     { icon: 'phone', title: 'Teléfono' }
@@ -28,12 +29,17 @@ export class ContactComponent {
   constructor(){}
   ngOnInit(){ this.initForm(); }
 
+  ngOnDestroy(): void { this.dismissModals(); }
+
+  @HostListener('window:popstate')
+  onBrowserBack(): void { this.dismissModals(); }
+
   initForm(){
     this.contactUsForm = this.fb.group({
       fullName: ['', Validators.required],
       companyName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      phone: ['', Validators.required,],
       issue: ['', Validators.required],
       channel: ['', Validators.required],
       request: ['', Validators.required],
@@ -71,4 +77,25 @@ export class ContactComponent {
 
   onCloseSuccess(){ this.successMsg = ''; }
   onCloseError(){ this.errorMsg = ''; }
+
+  private hideModal() {
+    this.hideBootstrapModal(this.habeasModal);
+  }
+
+  private dismissModals(): void {
+    this.hideBootstrapModal(this.habeasModal);
+  }
+
+  private hideBootstrapModal(modalRef?: ElementRef<HTMLDivElement>): void {
+    const element = modalRef?.nativeElement;
+    if (!element || typeof window === 'undefined') {
+      return;
+    }
+    const modalCtor = (window as any).bootstrap?.Modal;
+    if (!modalCtor) {
+      return;
+    }
+    const instance = typeof modalCtor.getInstance === 'function' ? modalCtor.getInstance(element) : null;
+    (instance ?? new modalCtor(element)).hide();
+  }
 }
