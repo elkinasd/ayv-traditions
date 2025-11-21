@@ -1,17 +1,12 @@
-<div *ngIf="isVisible"
-     class="raven-alert"
-     [ngClass]="type">
+<div *ngIf="isVisible" class="raven-alert" [ngClass]="type">
   <div class="raven-bg"></div>
   <div class="raven-content">
     <div class="raven-icon" *ngIf="showLogo">
-      <img src="logo-navbar.png" alt="A&V Traditions">
+      <img src="logo-navbar.png" alt="A&V Traditions" />
     </div>
     <div class="raven-text">
       <p class="raven-message">{{ message }}</p>
     </div>
-    <button *ngIf="dismissible"
-            class="raven-close"
-            (click)="close()"
-            aria-label="Cerrar">×</button>
+    <button *ngIf="dismissible" class="raven-close" (click)="close()" aria-label="Cerrar">×</button>
   </div>
 </div>

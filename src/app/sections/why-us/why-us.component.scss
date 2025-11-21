@@ -5,7 +5,7 @@
 }
 
 .card-centered {
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
 
@@ -14,23 +14,23 @@
 }
 
 .grass {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .inventory_2 {
-  color: #388E3C;
+  color: #388e3c;
 }
 
 .directions_boat {
-  color: #1976D2;
+  color: #1976d2;
 }
 
 .public {
-  color: #FBC02D;
+  color: #fbc02d;
 }
 
 .handshake {
-  color: #E64A19;
+  color: #e64a19;
 }
 
 .timeline-step {
@@ -39,7 +39,7 @@
 }
 
 .timeline-step::after {
-  content: "→";
+  content: '→';
   position: absolute;
   right: -20px;
   top: 25%;
@@ -48,7 +48,7 @@
 }
 
 .timeline-step:last-child::after {
-  content: "";
+  content: '';
 }
 
 @media (max-width: 768px) {
@@ -61,7 +61,7 @@
   }
 
   .timeline-step::after {
-    content: "↓";
+    content: '↓';
     right: 50%;
     top: 80%;
     transform: translateX(50%);

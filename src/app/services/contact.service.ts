@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-import { environment } from '../../environments/environment'; 
-import { email } from '../interfaces/email.interface'
+import { environment } from '../../environments/environment';
+import { email } from '../interfaces/email.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactService {
+  private http = inject(HttpClient);
 
   baseUrl = `${environment.baseUrl}`;
   urlContact = `${environment.mail.contact}`;
@@ -21,12 +21,10 @@ export class ContactService {
     issue: '',
     channel: '',
     request: '',
-    terms: false
+    terms: false,
   };
 
-  constructor(private http: HttpClient) { }
-
-  sendMail(formData: email): Observable<any> {
+  sendMail(formData: email): Observable<unknown> {
     return this.http.post(`${this.baseUrl}${this.urlContact}`, formData, { headers: this.headers });
   }
 }

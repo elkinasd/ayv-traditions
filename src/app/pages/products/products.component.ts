@@ -1,7 +1,6 @@
-import { Component, inject, Inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { Router, RouterOutlet } from '@angular/router';
-
+import { Router } from '@angular/router';
 
 import { SeoService } from '../../services/seo.service';
 import { AnalyticsService } from '../../services/analytics.service';
@@ -11,24 +10,20 @@ import { AnalyticsService } from '../../services/analytics.service';
   standalone: true,
   imports: [],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrl: './products.component.scss',
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
+  private seoService = inject(SeoService);
+  private analytics = inject(AnalyticsService);
 
   route = inject(Router);
 
-  constructor(
-    private seoService: SeoService,
-    private analytics: AnalyticsService
-  ) {}
-
-  goToProcessedProducts(){
+  goToProcessedProducts() {
     this.route.navigate(['/products/processed-products']);
   }
-  goToUnprocessedProducts(){
+  goToUnprocessedProducts() {
     this.route.navigate(['/products/unprocessed-products']);
   }
 
-  ngOnInit() {
-  }
+
 }

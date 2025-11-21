@@ -1,23 +1,24 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
-declare const bootstrap: any;
+declare const bootstrap: typeof import('bootstrap');
+
 
 
 @Component({
   selector: 'app-navbar-products',
   standalone: true,
-  imports: [ RouterModule ],
+  imports: [RouterModule],
   templateUrl: './navbar-products.component.html',
-  styleUrl: './navbar-products.component.scss'
+  styleUrl: './navbar-products.component.scss',
 })
 export class NavbarProductsComponent {
-@ViewChild('offcanvasRef') offcanvasRef!: ElementRef;
+  @ViewChild('offcanvasRef') offcanvasRef!: ElementRef;
 
-route = inject(Router);
-activatedRoute = inject(ActivatedRoute);
+  route = inject(Router);
+  activatedRoute = inject(ActivatedRoute);
 
-closeOffcanvas() {
+  closeOffcanvas() {
     const offcanvas = bootstrap.Offcanvas.getInstance(this.offcanvasRef.nativeElement);
     if (offcanvas) {
       offcanvas.hide();
@@ -40,5 +41,4 @@ closeOffcanvas() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-
 }

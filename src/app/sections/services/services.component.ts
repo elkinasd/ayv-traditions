@@ -1,30 +1,36 @@
-import { Component, ElementRef, HostListener, OnDestroy, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+declare const bootstrap: typeof import('bootstrap');
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [CommonModule],
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+  styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnDestroy {
   @ViewChild('exportModal') exportModal?: ElementRef<HTMLDivElement>;
   @ViewChild('brokerModal') brokerModal?: ElementRef<HTMLDivElement>;
 
-  ngOnDestroy(): void { this.dismissModals(); }
+  ngOnDestroy(): void {
+    this.dismissModals();
+  }
 
   @HostListener('window:popstate')
-  onBrowserBack(): void { this.dismissModals(); }
-  
-  selectedService: any = null;
+  onBrowserBack(): void {
+    this.dismissModals();
+  }
+
+  selectedService: { key: string } | null = null;
 
   services = [
     {
       icon: 'directions_boat',
       bgClass: 'bg-light-navy',
       title: 'Exportación',
-      key: 'export', 
+      key: 'export',
       description: `Comercio de productos agrícolas, productos alimenticios y 
       materias primas con alcance global y experiencia local.`,
     },
@@ -32,19 +38,19 @@ export class ServicesComponent implements OnDestroy {
       icon: 'handshake',
       bgClass: 'bg-green',
       title: 'Broker',
-      key: 'broker', 
+      key: 'broker',
       description: `Conectamos compradores y proveedores de manera eficiente, 
       facilitando la negociación y asegurando transacciones exitosas. 
       Nuestro objetivo es simplificar el proceso y generar valor para ambas partes.`,
-    }
+    },
   ];
 
-  openModal(service: any) {
+  openModal(service: { key: string }) {
     this.selectedService = service;
     const modalId = service.key === 'export' ? '#exportModal' : '#brokerModal';
     const modalElement = document.querySelector(modalId);
     if (modalElement) {
-      // @ts-ignore
+
       const modal = new bootstrap.Modal(modalElement);
       modal.show();
     }
@@ -60,11 +66,7 @@ export class ServicesComponent implements OnDestroy {
     if (!element || typeof window === 'undefined') {
       return;
     }
-    const modalCtor = (window as any).bootstrap?.Modal;
-    if (!modalCtor) {
-      return;
-    }
-    const instance = typeof modalCtor.getInstance === 'function' ? modalCtor.getInstance(element) : null;
-    (instance ?? new modalCtor(element)).hide();
+    const modal = bootstrap.Modal.getInstance(element) || new bootstrap.Modal(element);
+    modal.hide();
   }
 }

@@ -12,7 +12,7 @@ bootstrapApplication(AppComponent, appConfig)
   .then(() => {
     // bootstrap exitoso — aquí podrías inicializar monitoreo, analytics, o registrar service worker
   })
-  .catch((err) => {
+  .catch(err => {
     // Mejor mensaje para depuración y posibilidad de integrar remote logging
     console.error('Error bootstrapping Angular application:', err);
   });

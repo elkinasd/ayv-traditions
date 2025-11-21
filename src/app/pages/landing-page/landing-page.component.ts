@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { HeroComponent } from '../../sections/hero/hero.component';
 import { ServicesComponent } from '../../sections/services/services.component';
 import { WhyUsComponent } from '../../sections/why-us/why-us.component';
@@ -25,14 +25,12 @@ import { AnalyticsService } from '../../services/analytics.service';
     ScrollToTopComponent,
   ],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements OnInit {
+  private seoService = inject(SeoService);
+  private analytics = inject(AnalyticsService);
 
-  constructor(
-    private seoService: SeoService,
-    private analytics: AnalyticsService
-  ) {}
 
   ngOnInit() {
     this.seoService.setHomePageSEO();

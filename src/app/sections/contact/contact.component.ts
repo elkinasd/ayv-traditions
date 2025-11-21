@@ -1,6 +1,8 @@
-import { Component, ElementRef, HostListener, OnDestroy, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, ViewChild, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+declare const bootstrap: typeof import('bootstrap');
 
 import { ContactService } from '../../services/contact.service';
 import { AlertsComponent } from '../../shared/alerts/alerts.component';
@@ -8,15 +10,15 @@ import { AlertsComponent } from '../../shared/alerts/alerts.component';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ CommonModule, ReactiveFormsModule, AlertsComponent ],
+  imports: [CommonModule, ReactiveFormsModule, AlertsComponent],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements OnDestroy {
+export class ContactComponent implements OnDestroy, OnInit {
   @ViewChild('habeasModal') habeasModal?: ElementRef<HTMLDivElement>;
   services = [
     { icon: 'email', title: 'Correo electrónico' },
-    { icon: 'phone', title: 'Teléfono' }
+    { icon: 'phone', title: 'Teléfono' },
   ];
 
   loading = false;
@@ -26,33 +28,39 @@ export class ContactComponent implements OnDestroy {
   private fb = inject(FormBuilder);
   private contactService = inject(ContactService);
 
-  constructor(){}
-  ngOnInit(){ this.initForm(); }
+  constructor() { /* empty */ }
+  ngOnInit() {
+    this.initForm();
+  }
 
-  ngOnDestroy(): void { this.dismissModals(); }
+  ngOnDestroy(): void {
+    this.dismissModals();
+  }
 
   @HostListener('window:popstate')
-  onBrowserBack(): void { this.dismissModals(); }
+  onBrowserBack(): void {
+    this.dismissModals();
+  }
 
-  initForm(){
+  initForm() {
     this.contactUsForm = this.fb.group({
       fullName: ['', Validators.required],
       companyName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required,],
+      phone: ['', Validators.required],
       issue: ['', Validators.required],
       channel: ['', Validators.required],
       request: ['', Validators.required],
-      terms: [false, Validators.requiredTrue]
+      terms: [false, Validators.requiredTrue],
     });
   }
 
-  contactUs(){
+  contactUs() {
     this.successMsg = '';
     this.errorMsg = '';
 
     const formContact = this.contactUsForm.value;
-    if(!formContact.terms){
+    if (!formContact.terms) {
       this.errorMsg = 'Debes aceptar los términos y condiciones.';
       return;
     }
@@ -70,13 +78,18 @@ export class ContactComponent implements OnDestroy {
       error: () => {
         this.loading = false;
         this.contactUsForm.enable({ emitEvent: false });
-        this.errorMsg = 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.';
-      }
+        this.errorMsg =
+          'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.';
+      },
     });
   }
 
-  onCloseSuccess(){ this.successMsg = ''; }
-  onCloseError(){ this.errorMsg = ''; }
+  onCloseSuccess() {
+    this.successMsg = '';
+  }
+  onCloseError() {
+    this.errorMsg = '';
+  }
 
   private hideModal() {
     this.hideBootstrapModal(this.habeasModal);
@@ -91,11 +104,7 @@ export class ContactComponent implements OnDestroy {
     if (!element || typeof window === 'undefined') {
       return;
     }
-    const modalCtor = (window as any).bootstrap?.Modal;
-    if (!modalCtor) {
-      return;
-    }
-    const instance = typeof modalCtor.getInstance === 'function' ? modalCtor.getInstance(element) : null;
-    (instance ?? new modalCtor(element)).hide();
+    const modal = bootstrap.Modal.getInstance(element) || new bootstrap.Modal(element);
+    modal.hide();
   }
 }

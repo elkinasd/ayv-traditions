@@ -1,4 +1,4 @@
-@use "../global-styles.scss" as *;
+@use '../global-styles.scss' as *;
 
 // Navbar principal con estilo A&V Traditions
 .nav-bar {
@@ -23,9 +23,9 @@
     }
   }
 
-  .navbar-brand{
+  .navbar-brand {
     color: $avt-white;
-       &:hover {
+    &:hover {
       color: $avt-orange;
       text-decoration: none;
       cursor: pointer;
@@ -43,7 +43,6 @@
       color: $avt-orange;
       text-decoration: none;
       cursor: pointer;
-
     }
 
     &::after {
@@ -66,14 +65,14 @@
       color: $avt-orange;
     }
   }
-  .btn-outline-dark{
-    border:1px solid white;
+  .btn-outline-dark {
+    border: 1px solid white;
 
-    &.btn-outline-dark:hover{
-    border:1px solid white;
-    background-color: $avt-orange;
-    color: $avt-white;
-  }
+    &.btn-outline-dark:hover {
+      border: 1px solid white;
+      background-color: $avt-orange;
+      color: $avt-white;
+    }
   }
 }
 

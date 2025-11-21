@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
-declare let gtag: Function;
+declare let gtag: (...args: unknown[]) => void;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnalyticsService {
-
-  constructor() { }
+  constructor() { /* empty */ }
 
   // Configurar Analytics con el Measurement ID desde environment
   private measurementId = environment.analytics.googleAnalyticsId;
@@ -19,7 +18,7 @@ export class AnalyticsService {
     if (typeof gtag !== 'undefined') {
       gtag('config', this.measurementId, {
         page_path: url,
-        page_title: title
+        page_title: title,
       });
     }
   }
@@ -30,7 +29,7 @@ export class AnalyticsService {
       gtag('event', action, {
         event_category: category,
         event_label: label,
-        value: value
+        value: value,
       });
     }
   }

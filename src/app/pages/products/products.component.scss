@@ -1,25 +1,25 @@
 @use '../../shared/global-styles.scss' as *;
 
 .hero-container {
-    padding: 40px;
+  padding: 40px;
 }
-#mision-vision{
-    min-height: 100vh;
+#mision-vision {
+  min-height: 100vh;
 }
 .btn {
-    font-size: 11px;
-    width: 180px;
-    margin-right: 5px;
+  font-size: 11px;
+  width: 180px;
+  margin-right: 5px;
 }
 .img-cuervo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.card-text{
-    margin-top: 10px;
+.card-text {
+  margin-top: 10px;
 }
 
 .card-centered {
-    display: flex; 
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

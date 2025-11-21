@@ -1,54 +1,94 @@
 <nav class="nav-bar navbar navbar-dark px-3 fixed-top">
-    <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="/">A&V Traditions</a>
-        <!-- pantallas grandes -->
-        <div class="d-flex align-items-center gap-2">
-            <ul class="navbar-nav d-none d-lg-flex flex-row gap-2 mb-0">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                        Volver al Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="products" routerLinkActive="active">Origen y Sostenibilidad</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="processed-products" routerLinkActive="active">Productos Procesados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="unprocessed-products" routerLinkActive="active">Productos No procesados</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Botón hamburguesa móviles -->
-        <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">            
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" href="/">A&V Traditions</a>
+    <!-- pantallas grandes -->
+    <div class="d-flex align-items-center gap-2">
+      <ul class="navbar-nav d-none d-lg-flex flex-row gap-2 mb-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            Volver al Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products" routerLinkActive="active"
+            >Origen y Sostenibilidad</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="processed-products" routerLinkActive="active"
+            >Productos Procesados</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="unprocessed-products" routerLinkActive="active"
+            >Productos No procesados</a
+          >
+        </li>
+      </ul>
     </div>
+    <!-- Botón hamburguesa móviles -->
+    <button
+      class="btn btn-outline-dark d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasMenu"
+      aria-controls="offcanvasMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 </nav>
 
 <!-- Menú móviles -->
-<div #offcanvasRef class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu"
-    aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="closeOffcanvas()">Volver al Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="products" routerLinkActive="active" (click)="closeOffcanvas()">Origen y Sostenibilidad</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="processed-products" routerLinkActive="active" (click)="closeOffcanvas()">Productos Procesados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="unprocessed-products" routerLinkActive="active" (click)="closeOffcanvas()">Productos No procesados</a>
-            </li>
-        </ul>
-    </div>
+<div
+  #offcanvasRef
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasMenu"
+  aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="closeOffcanvas()">Volver al Home</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="products"
+          routerLinkActive="active"
+          (click)="closeOffcanvas()"
+          >Origen y Sostenibilidad</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="processed-products"
+          routerLinkActive="active"
+          (click)="closeOffcanvas()"
+          >Productos Procesados</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="unprocessed-products"
+          routerLinkActive="active"
+          (click)="closeOffcanvas()"
+          >Productos No procesados</a
+        >
+      </li>
+    </ul>
+  </div>
 </div>

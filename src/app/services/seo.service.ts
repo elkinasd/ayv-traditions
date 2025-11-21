@@ -1,16 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeoService {
+  private meta = inject(Meta);
+  private title = inject(Title);
 
-  constructor(
-    private meta: Meta,
-    private title: Title
-  ) { }
 
   updateTitle(title: string) {
     this.title.setTitle(title);
@@ -55,39 +53,44 @@ export class SeoService {
     this.updateMetaTags({
       title: environment.seo.defaultTitle,
       description: environment.seo.defaultDescription,
-      keywords: 'exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales',
+      keywords:
+        'exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales',
       url: environment.seo.baseUrl,
-      image: environment.seo.defaultImage
+      image: environment.seo.defaultImage,
     });
   }
 
   setBriefcaseSEO() {
     this.updateMetaTags({
       title: 'Portafolio de Productos - A&V Traditions',
-      description: 'Descubre nuestro portafolio completo de productos colombianos para exportación: procesados y sin procesar.',
+      description:
+        'Descubre nuestro portafolio completo de productos colombianos para exportación: procesados y sin procesar.',
       keywords: 'portafolio productos colombianos, exportación, procesados, sin procesar',
       url: `${environment.seo.baseUrl}/portafolio`,
-      image: environment.seo.defaultImage
+      image: environment.seo.defaultImage,
     });
   }
 
   setProcessedProductsSEO() {
     this.updateMetaTags({
       title: 'Productos Procesados - A&V Traditions',
-      description: 'Azúcares refinados, frutas procesadas, café tostado, harinas y aceites vegetales colombianos para exportación.',
+      description:
+        'Azúcares refinados, frutas procesadas, café tostado, harinas y aceites vegetales colombianos para exportación.',
       keywords: 'productos procesados colombia, azúcar refinada, café tostado, aceites vegetales',
       url: `${environment.seo.baseUrl}/portafolio/procesados`,
-      image: environment.seo.defaultImage
+      image: environment.seo.defaultImage,
     });
   }
 
   setUnprocessedProductsSEO() {
     this.updateMetaTags({
       title: 'Productos Sin Procesar - A&V Traditions',
-      description: 'Azúcar cruda, frutas frescas, café en grano, cacao y granos colombianos en estado natural para exportación.',
-      keywords: 'productos sin procesar colombia, azúcar cruda, café en grano, frutas frescas, cacao',
+      description:
+        'Azúcar cruda, frutas frescas, café en grano, cacao y granos colombianos en estado natural para exportación.',
+      keywords:
+        'productos sin procesar colombia, azúcar cruda, café en grano, frutas frescas, cacao',
       url: `${environment.seo.baseUrl}/portafolio/no-procesados`,
-      image: environment.seo.defaultImage
+      image: environment.seo.defaultImage,
     });
   }
 }

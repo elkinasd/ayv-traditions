@@ -2,9 +2,10 @@
 
 ## Introducción
 
-Esta guía te ayudará a transformar tu sitio web Angular en una máquina optimizada para motores de búsqueda, con análisis completos de usuarios y rendimiento superior. 
+Esta guía te ayudará a transformar tu sitio web Angular en una máquina optimizada para motores de búsqueda, con análisis completos de usuarios y rendimiento superior.
 
 **¿Por qué es importante?**
+
 - **SEO**: Más visibilidad en Google = más visitantes orgánicos
 - **Analytics**: Entender a tus usuarios para tomar mejores decisiones
 - **Performance**: Sitios más rápidos = mejor experiencia y mejor posicionamiento
@@ -14,6 +15,7 @@ Esta guía te ayudará a transformar tu sitio web Angular en una máquina optimi
 Tu proyecto Angular ya cuenta con una base sólida:
 
 ### SEO Básico
+
 - ✅ Codificación UTF-8 para caracteres especiales
 - ✅ Meta viewport para dispositivos móviles
 - ✅ Título de página básico
@@ -22,6 +24,7 @@ Tu proyecto Angular ya cuenta con una base sólida:
 - ✅ Estructura semántica básica (`<main>`, `<footer>`)
 
 ### Optimización Base
+
 - ✅ SCSS organizado con variables de colores
 - ✅ Componentes modulares para fácil mantenimiento
 - ✅ Sistema de rutas con Angular Router
@@ -30,6 +33,7 @@ Tu proyecto Angular ya cuenta con una base sólida:
 ## Lo Que Falta y Por Qué Es Crucial ❌
 
 ### SEO Crítico (Sin esto, Google no te encuentra bien)
+
 - ❌ **Meta descriptions**: Descripción que aparece en resultados de Google
 - ❌ **Open Graph**: Para compartir bonito en redes sociales
 - ❌ **Angular Universal (SSR)**: Para que Google lea tu contenido
@@ -40,11 +44,13 @@ Tu proyecto Angular ya cuenta con una base sólida:
 - ❌ **Idioma en español**: Actualmente está en inglés
 
 ### Analytics (Sin esto, navegas a ciegas)
+
 - ❌ **Google Analytics**: Estadísticas de visitantes
 - ❌ **Google Tag Manager**: Gestión centralizada de códigos
 - ❌ **Eventos personalizados**: Seguimiento de acciones específicas
 
 ### Performance (Velocidad = mejor posicionamiento)
+
 - ❌ **Lazy loading**: Cargar imágenes solo cuando se necesitan
 - ❌ **WebP**: Formato de imagen más eficiente
 - ❌ **Service Workers**: Caché inteligente para velocidad
@@ -62,9 +68,9 @@ Tu proyecto Angular ya cuenta con una base sólida:
 ```html
 <!-- ANTES -->
 <html lang="en">
-
-<!-- DESPUÉS -->
-<html lang="es">
+  <!-- DESPUÉS -->
+  <html lang="es"></html>
+</html>
 ```
 
 #### Paso 2: Mejorar meta tags básicos
@@ -73,33 +79,39 @@ Tu proyecto Angular ya cuenta con una base sólida:
 
 ```html
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>A&V Traditions - Comercio Internacional de Productos Colombianos</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- META TAGS NUEVOS -->
-  <meta name="description" content="Comercio global con confianza local. Exportamos productos agrícolas colombianos de alta calidad al mundo. Azúcar, café, frutas y más.">
-  <meta name="keywords" content="exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales">
-  <meta name="author" content="A&V Traditions">
-  <meta name="robots" content="index, follow">
-  
+  <meta
+    name="description"
+    content="Comercio global con confianza local. Exportamos productos agrícolas colombianos de alta calidad al mundo. Azúcar, café, frutas y más." />
+  <meta
+    name="keywords"
+    content="exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales" />
+  <meta name="author" content="A&V Traditions" />
+  <meta name="robots" content="index, follow" />
+
   <!-- OPEN GRAPH PARA REDES SOCIALES -->
-  <meta property="og:title" content="A&V Traditions - Comercio Internacional">
-  <meta property="og:description" content="Conectamos la riqueza de Colombia con el mundo mediante soluciones de comercio internacional">
-  <meta property="og:image" content="https://tudominio.com/logo-with-name.png">
-  <meta property="og:url" content="https://tudominio.com">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="A&V Traditions">
-  
+  <meta property="og:title" content="A&V Traditions - Comercio Internacional" />
+  <meta
+    property="og:description"
+    content="Conectamos la riqueza de Colombia con el mundo mediante soluciones de comercio internacional" />
+  <meta property="og:image" content="https://tudominio.com/logo-with-name.png" />
+  <meta property="og:url" content="https://tudominio.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="A&V Traditions" />
+
   <!-- TWITTER CARDS -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A&V Traditions - Comercio Internacional">
-  <meta name="twitter:description" content="Conectamos la riqueza de Colombia con el mundo">
-  <meta name="twitter:image" content="https://tudominio.com/logo-with-name.png">
-  
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A&V Traditions - Comercio Internacional" />
+  <meta name="twitter:description" content="Conectamos la riqueza de Colombia con el mundo" />
+  <meta name="twitter:image" content="https://tudominio.com/logo-with-name.png" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 ```
 
@@ -112,14 +124,13 @@ import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeoService {
-
   constructor(
     private meta: Meta,
     private title: Title
-  ) { }
+  ) {}
 
   updateTitle(title: string) {
     this.title.setTitle(title);
@@ -177,19 +188,20 @@ import { SeoService } from '../../services/seo.service';
     // ... imports existentes
   ],
   templateUrl: './landin-page.component.html',
-  styleUrl: './landin-page.component.scss'
+  styleUrl: './landin-page.component.scss',
 })
 export class LandinPageComponent implements OnInit {
-
   constructor(private seoService: SeoService) {}
 
   ngOnInit() {
     this.seoService.updateMetaTags({
       title: 'A&V Traditions - Comercio Internacional de Productos Colombianos',
-      description: 'Comercio global con confianza local. Exportamos productos agrícolas colombianos de alta calidad. Azúcar, café, frutas tropicales y más.',
-      keywords: 'exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales',
+      description:
+        'Comercio global con confianza local. Exportamos productos agrícolas colombianos de alta calidad. Azúcar, café, frutas tropicales y más.',
+      keywords:
+        'exportación colombia, productos agrícolas, comercio internacional, azúcar, café, frutas tropicales',
       url: 'https://tudominio.com',
-      image: 'https://tudominio.com/logo-with-name.png'
+      image: 'https://tudominio.com/logo-with-name.png',
     });
   }
 }
@@ -201,20 +213,24 @@ export class LandinPageComponent implements OnInit {
 
 ```html
 <!-- ANTES -->
-<img src="logo-navbar.png" alt="vox-umbrae" height="50">
+<img src="logo-navbar.png" alt="vox-umbrae" height="50" />
 
 <!-- DESPUÉS -->
-<img src="logo-navbar.png" alt="A&V Traditions - Logo de comercio internacional" height="50">
+<img src="logo-navbar.png" alt="A&V Traditions - Logo de comercio internacional" height="50" />
 ```
 
 **Archivo:** `src/app/sections/footer/footer.component.html`
 
 ```html
 <!-- ANTES -->
-<img src="logo-navbar.png" alt="A&V Traditions" width="40" class="me-3">
+<img src="logo-navbar.png" alt="A&V Traditions" width="40" class="me-3" />
 
 <!-- DESPUÉS -->
-<img src="logo-navbar.png" alt="A&V Traditions - Exportadores de productos colombianos" width="40" class="me-3">
+<img
+  src="logo-navbar.png"
+  alt="A&V Traditions - Exportadores de productos colombianos"
+  width="40"
+  class="me-3" />
 ```
 
 ---
@@ -224,6 +240,7 @@ export class LandinPageComponent implements OnInit {
 #### Paso 6: Instalar Google Analytics
 
 **1. Crear cuenta en Google Analytics:**
+
 - Ve a https://analytics.google.com
 - Crea una propiedad
 - Obtén tu Measurement ID (formato: G-XXXXXXXXXX)
@@ -237,7 +254,9 @@ export class LandinPageComponent implements OnInit {
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TU_MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
   gtag('config', 'G-TU_MEASUREMENT_ID');
 </script>
@@ -253,17 +272,16 @@ import { Injectable } from '@angular/core';
 declare let gtag: Function;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnalyticsService {
-
-  constructor() { }
+  constructor() {}
 
   // Evento de página vista
   trackPageView(url: string, title: string) {
     gtag('config', 'G-TU_MEASUREMENT_ID', {
       page_path: url,
-      page_title: title
+      page_title: title,
     });
   }
 
@@ -272,7 +290,7 @@ export class AnalyticsService {
     gtag('event', action, {
       event_category: category,
       event_label: label,
-      value: value
+      value: value,
     });
   }
 
@@ -314,7 +332,7 @@ export class LandinPageComponent implements OnInit {
   ngOnInit() {
     // SEO existente...
     this.seoService.updateMetaTags({...});
-    
+
     // NUEVO: Analytics
     this.analytics.trackPageView('/', 'Página Principal - A&V Traditions');
   }
@@ -382,30 +400,30 @@ Disallow: /private/
 ```html
 <!-- Schema.org para mejor SEO -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Corporation",
-  "name": "A&V Traditions",
-  "description": "Empresa de comercio internacional especializada en exportación de productos agrícolas colombianos",
-  "url": "https://tudominio.com",
-  "logo": "https://tudominio.com/logo-with-name.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+57-XXX-XXXXXXX",
-    "contactType": "customer service",
-    "availableLanguage": ["Spanish", "English"]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "CO",
-    "addressLocality": "Tu Ciudad"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/av-traditions",
-    "https://www.facebook.com/avtraditions",
-    "https://www.instagram.com/avtraditions"
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "A&V Traditions",
+    "description": "Empresa de comercio internacional especializada en exportación de productos agrícolas colombianos",
+    "url": "https://tudominio.com",
+    "logo": "https://tudominio.com/logo-with-name.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+57-XXX-XXXXXXX",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "English"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CO",
+      "addressLocality": "Tu Ciudad"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/av-traditions",
+      "https://www.facebook.com/avtraditions",
+      "https://www.instagram.com/avtraditions"
+    ]
+  }
 </script>
 ```
 
@@ -416,6 +434,7 @@ Disallow: /private/
 #### Paso 12: Implementar Lazy Loading de imágenes
 
 **Instalar dependencia:**
+
 ```bash
 npm install @angular/common
 ```
@@ -429,11 +448,12 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appLazyLoad]',
-  standalone: true
+  standalone: true,
 })
 export class LazyLoadDirective implements OnInit {
   @Input() appLazyLoad!: string;
-  @Input() placeholder: string = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect width="1" height="1" fill="%23f0f0f0"/></svg>';
+  @Input() placeholder: string =
+    'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect width="1" height="1" fill="%23f0f0f0"/></svg>';
 
   constructor(private el: ElementRef) {}
 
@@ -447,7 +467,7 @@ export class LazyLoadDirective implements OnInit {
   }
 
   private observeImage() {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.loadImage();
@@ -455,7 +475,7 @@ export class LazyLoadDirective implements OnInit {
         }
       });
     });
-    
+
     observer.observe(this.el.nativeElement);
   }
 
@@ -469,10 +489,10 @@ export class LazyLoadDirective implements OnInit {
 
 ```html
 <!-- ANTES -->
-<img src="coffee-beans.jpg" alt="Café en grano">
+<img src="coffee-beans.jpg" alt="Café en grano" />
 
 <!-- DESPUÉS -->
-<img appLazyLoad="coffee-beans.jpg" alt="Café en grano colombiano de exportación" loading="lazy">
+<img appLazyLoad="coffee-beans.jpg" alt="Café en grano colombiano de exportación" loading="lazy" />
 ```
 
 #### Paso 13: Optimizar angular.json para production
@@ -515,6 +535,7 @@ ng add @nguniversal/express-engine
 ```
 
 Este comando automáticamente:
+
 - Instala las dependencias necesarias
 - Configura el servidor Express
 - Actualiza angular.json con comandos SSR
@@ -532,10 +553,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    importProvidersFrom(BrowserModule)
-  ]
+  providers: [provideRouter(routes), importProvidersFrom(BrowserModule)],
 };
 ```
 
@@ -556,43 +574,50 @@ npm run serve:ssr
 ### 🔍 Verificar SEO
 
 **1. Google Search Console:**
+
 - Ve a https://search.google.com/search-console
 - Agrega tu dominio
 - Envía tu sitemap: `https://tudominio.com/sitemap.xml`
 
 **2. Herramientas de testing:**
+
 - **Lighthouse:** Auditoría completa (DevTools > Lighthouse)
 - **PageSpeed Insights:** https://pagespeed.web.dev/
 - **Rich Results Test:** https://search.google.com/test/rich-results
 
 **3. Meta tags preview:**
+
 - **Facebook Debugger:** https://developers.facebook.com/tools/debug/
 - **Twitter Card Validator:** https://cards-dev.twitter.com/validator
 
 ### 📊 Verificar Analytics
 
 **1. Real-time en Google Analytics:**
+
 - Ve a tu cuenta de Analytics
 - Sección "Tiempo real"
 - Navega por tu sitio y verifica que se registren las vistas
 
 **2. Test de eventos:**
+
 ```javascript
 // En console del navegador
 gtag('event', 'test', {
   event_category: 'Testing',
-  event_label: 'Manual test'
+  event_label: 'Manual test',
 });
 ```
 
 ### ⚡ Verificar Performance
 
 **1. Core Web Vitals:**
+
 - **LCP (Largest Contentful Paint):** < 2.5s
 - **FID (First Input Delay):** < 100ms
 - **CLS (Cumulative Layout Shift):** < 0.1
 
 **2. Herramientas recomendadas:**
+
 - Chrome DevTools > Performance
 - WebPageTest.org
 - GTmetrix.com
@@ -609,12 +634,14 @@ gtag('event', 'test', {
 ## SEO Checklist para Proyectos Angular
 
 ### Configuración Inicial
+
 - [ ] Cambiar idioma a `lang="es"` en index.html
 - [ ] Copiar servicio SeoService
 - [ ] Copiar servicio AnalyticsService
 - [ ] Copiar directiva LazyLoadDirective
 
 ### Meta Tags
+
 - [ ] Título único por página (max 60 caracteres)
 - [ ] Meta description (max 155 caracteres)
 - [ ] Keywords relevantes
@@ -622,21 +649,25 @@ gtag('event', 'test', {
 - [ ] Twitter Cards
 
 ### Archivos Obligatorios
+
 - [ ] robots.txt en public/
 - [ ] sitemap.xml en public/
 - [ ] Schema markup JSON-LD
 
 ### Analytics
+
 - [ ] Crear cuenta Google Analytics
 - [ ] Configurar Measurement ID
 - [ ] Implementar eventos personalizados
 
 ### Performance
+
 - [ ] Lazy loading en imágenes
 - [ ] Optimización de build
 - [ ] Angular Universal (SSR)
 
 ### Testing Final
+
 - [ ] Lighthouse score > 90
 - [ ] Search Console configurado
 - [ ] Analytics funcionando
@@ -686,17 +717,20 @@ echo "3. Actualizar URLs en sitemap.xml"
 ## Notas Importantes
 
 ### ⚠️ Consideraciones de Seguridad
+
 - Nunca expongas claves API en el código frontend
 - Usa variables de entorno para configuraciones sensibles
 - Configura HTTPS antes de ir a producción
 
 ### 🔄 Mantenimiento Regular
+
 - Actualizar sitemap.xml mensualmente
 - Revisar métricas de Analytics semanalmente
 - Auditorías de Lighthouse trimestralmente
 - Actualizar Schema markup cuando cambies servicios
 
 ### 📈 Métricas Clave a Monitorear
+
 - **Tráfico orgánico:** Crecimiento mes a mes
 - **Páginas más visitadas:** Optimizar contenido popular
 - **Tiempo en página:** Indica calidad del contenido

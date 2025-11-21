@@ -6,10 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-
   services = [
     {
       icon: 'shield',
@@ -32,6 +31,6 @@ export class AboutComponent {
       Trabajamos con productores confiables, aplicamos estándares internacionales 
       y combinamos tradición con tecnología para asegurar productos excepcionales 
       en cada entrega.`,
-    }
+    },
   ];
 }

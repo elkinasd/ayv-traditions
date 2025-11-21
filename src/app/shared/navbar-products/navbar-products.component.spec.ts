@@ -8,9 +8,8 @@ describe('NavbarBriefcaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarProductsComponent]
-    })
-    .compileComponents();
+      imports: [NavbarProductsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarProductsComponent);
     component = fixture.componentInstance;

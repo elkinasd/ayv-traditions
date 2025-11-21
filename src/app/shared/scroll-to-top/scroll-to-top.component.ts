@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './scroll-to-top.component.html',
-  styleUrl: './scroll-to-top.component.scss'
+  styleUrl: './scroll-to-top.component.scss',
 })
 export class ScrollToTopComponent {
   isVisible = false;
@@ -19,7 +19,7 @@ export class ScrollToTopComponent {
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 }

@@ -6,10 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './why-us.component.html',
-  styleUrl: './why-us.component.scss'
+  styleUrl: './why-us.component.scss',
 })
 export class WhyUsComponent {
-
   services = [
     {
       icon: 'memory',
@@ -34,7 +33,6 @@ export class WhyUsComponent {
       descripcion: `Ofrecemos productos agrícolas, alimentos procesados y minerales 
       de alta calidad. Nuestro portafolio diverso se adapta a cada mercado, generando 
       oportunidades reales de expansión.`,
-    }
+    },
   ];
-
 }

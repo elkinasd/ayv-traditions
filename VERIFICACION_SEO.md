@@ -3,20 +3,24 @@
 ## ✅ Checklist de Verificación Rápida
 
 ### SEO Básico
+
 - [ ] **Idioma:** Verificar que `<html lang="es">` en view-source del sitio
 - [ ] **Título:** Debe aparecer "A&V Traditions - Comercio Internacional" en la pestaña del navegador
 - [ ] **Meta Description:** Usar herramienta de inspección de Facebook/Twitter
 - [ ] **Alt texts:** Inspeccionar imágenes y verificar que tengan descripciones
 
 ### Archivos SEO
+
 - [ ] **Robots.txt:** Ir a `tudominio.com/robots.txt` - debe mostrar contenido
 - [ ] **Sitemap:** Ir a `tudominio.com/sitemap.xml` - debe mostrar XML válido
 
 ### Analytics
+
 - [ ] **Google Analytics:** Verificar en tiempo real que se registren visitas
 - [ ] **Eventos:** Comprobar que se envíen eventos de navegación
 
 ### Performance
+
 - [ ] **Core Web Vitals:** Usar Lighthouse en DevTools (score > 90)
 - [ ] **Lazy Loading:** Verificar que imágenes se cargan bajo demanda
 
@@ -27,6 +31,7 @@
 ### 1. SEO Tools Online
 
 **Meta Tags Preview:**
+
 ```
 Facebook Debugger: https://developers.facebook.com/tools/debug/
 Twitter Card Validator: https://cards-dev.twitter.com/validator
@@ -34,6 +39,7 @@ LinkedIn Post Inspector: https://www.linkedin.com/post-inspector/
 ```
 
 **SEO Analysis:**
+
 ```
 Google PageSpeed Insights: https://pagespeed.web.dev/
 GTmetrix: https://gtmetrix.com/
@@ -41,6 +47,7 @@ Lighthouse (Chrome DevTools): F12 > Lighthouse > Generate Report
 ```
 
 **Rich Results Testing:**
+
 ```
 Google Rich Results Test: https://search.google.com/test/rich-results
 Schema Markup Validator: https://validator.schema.org/
@@ -49,6 +56,7 @@ Schema Markup Validator: https://validator.schema.org/
 ### 2. Analytics Verification
 
 **Real-time Analytics Check:**
+
 1. Ir a Google Analytics (analytics.google.com)
 2. Seleccionar tu propiedad
 3. Ir a "Tiempo real" > "Resumen"
@@ -56,18 +64,20 @@ Schema Markup Validator: https://validator.schema.org/
 5. Verificar que aparezcan las visitas en tiempo real
 
 **Event Tracking Check:**
+
 ```javascript
 // Abrir Console en DevTools (F12) y ejecutar:
 gtag('event', 'test_event', {
   event_category: 'Testing',
   event_label: 'Manual verification',
-  value: 1
+  value: 1,
 });
 ```
 
 ### 3. Performance Testing
 
 **Core Web Vitals Check:**
+
 1. Abrir Chrome DevTools (F12)
 2. Ir a pestaña "Lighthouse"
 3. Seleccionar "Performance"
@@ -79,6 +89,7 @@ gtag('event', 'test_event', {
    - SEO: > 95
 
 **Network Performance:**
+
 1. DevTools > Network tab
 2. Refresh página
 3. Verificar:
@@ -91,6 +102,7 @@ gtag('event', 'test_event', {
 ## 🚨 Problemas Comunes y Soluciones
 
 ### Analytics No Funciona
+
 ```
 Problema: No se ven visitas en tiempo real
 Solución:
@@ -101,6 +113,7 @@ Solución:
 ```
 
 ### SEO Tags No Aparecen
+
 ```
 Problema: Facebook/Twitter no muestran preview
 Solución:
@@ -110,6 +123,7 @@ Solución:
 ```
 
 ### Performance Bajo
+
 ```
 Problema: Lighthouse score < 80
 Solución:
@@ -124,18 +138,21 @@ Solución:
 ## 📊 Métricas a Monitorear
 
 ### SEO Monthly Review
+
 - **Posición en Google:** Buscar "A&V Traditions"
 - **Tráfico Orgánico:** Analytics > Adquisición > Todo el tráfico > Canales
 - **Keywords Performance:** Google Search Console
 - **Click-through Rate:** Search Console > Rendimiento
 
 ### Analytics Weekly Review
+
 - **Páginas más visitadas:** Analytics > Comportamiento > Contenido del sitio
 - **Tiempo en página:** Promedio > 2 minutos es bueno
 - **Tasa de rebote:** < 60% es excelente
 - **Dispositivos:** Mobile vs Desktop usage
 
 ### Performance Alerts
+
 - **Page Load Time:** > 3s requiere optimización
 - **Core Web Vitals:** Monitorear LCP, FID, CLS
 - **Error Rate:** JavaScript errors < 1%
@@ -146,6 +163,7 @@ Solución:
 ## 🔧 Comandos de Verificación Técnica
 
 ### Build Production
+
 ```bash
 # Generar build optimizado
 npm run build
@@ -158,6 +176,7 @@ npx http-server dist/ayv-traditions/
 ```
 
 ### SEO Testing Local
+
 ```bash
 # Verificar robots.txt
 curl http://localhost:4200/robots.txt
@@ -170,6 +189,7 @@ curl -s http://localhost:4200 | grep -i "meta name\|meta property"
 ```
 
 ### Analytics Debug
+
 ```javascript
 // En Console del navegador - verificar que gtag funciona
 console.log(typeof gtag); // debe retornar "function"
@@ -180,7 +200,7 @@ console.log(window.dataLayer); // debe mostrar array con datos
 // Test event manual
 gtag('event', 'page_view', {
   page_title: 'Test Page',
-  page_location: window.location.href
+  page_location: window.location.href,
 });
 ```
 
@@ -189,6 +209,7 @@ gtag('event', 'page_view', {
 ## 📈 Next Steps After Verification
 
 ### 1. Submit to Search Engines
+
 ```
 Google Search Console: https://search.google.com/search-console
 - Add property: https://tudominio.com
@@ -201,6 +222,7 @@ Bing Webmaster Tools: https://www.bing.com/webmasters
 ```
 
 ### 2. Monitor Performance
+
 ```
 Set up alerts in Analytics:
 - Traffic drops > 20%
@@ -214,6 +236,7 @@ Weekly review schedule:
 ```
 
 ### 3. Content Optimization
+
 ```
 Based on Analytics data:
 - Identify top-performing pages
@@ -227,18 +250,21 @@ Based on Analytics data:
 ## 🎯 Success Metrics After 30 Days
 
 ### SEO Targets
+
 - [ ] Google ranking for "A&V Traditions" in top 3
 - [ ] Organic traffic increase > 25%
 - [ ] Search Console impressions > 1000/month
 - [ ] Click-through rate > 5%
 
 ### Performance Targets
+
 - [ ] Lighthouse Performance score > 95
 - [ ] Page load time < 2s
 - [ ] Core Web Vitals all "Good"
 - [ ] Zero console errors
 
 ### Analytics Targets
+
 - [ ] Monthly visitors > 500
 - [ ] Average session duration > 2 minutes
 - [ ] Bounce rate < 50%

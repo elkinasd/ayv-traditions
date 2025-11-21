@@ -1,15 +1,14 @@
 @use '../../shared/global-styles.scss' as *;
 
-
 .not-found {
-  background-color: $avt-navy; 
+  background-color: $avt-navy;
   color: $avt-white;
   min-height: 100vh;
   padding: 2rem;
 
   .not-found-img {
     max-width: 280px;
-    filter: drop-shadow(0 0 7px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.6));
     animation: flicker 2s infinite alternate;
   }
 
@@ -25,7 +24,13 @@
 }
 
 @keyframes flicker {
-  0%   { opacity: 1; }
-  45%  { opacity: 0.85; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
 }

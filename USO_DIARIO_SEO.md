@@ -12,11 +12,11 @@ Ya tienes estos métodos pre-configurados:
 
 ```typescript
 // Métodos que ya están listos para usar:
-this.seoService.setHomePageSEO()              // Página principal
-this.seoService.setBriefcaseSEO()             // Portafolio  
-this.seoService.setProcessedProductsSEO()     // Productos procesados
-this.seoService.setUnprocessedProductsSEO()   // Productos sin procesar
-this.seoService.setUnderConstructionSEO()     // En construcción
+this.seoService.setHomePageSEO(); // Página principal
+this.seoService.setBriefcaseSEO(); // Portafolio
+this.seoService.setProcessedProductsSEO(); // Productos procesados
+this.seoService.setUnprocessedProductsSEO(); // Productos sin procesar
+this.seoService.setUnderConstructionSEO(); // En construcción
 ```
 
 ### **Ejemplo: Usar en un componente existente**
@@ -32,7 +32,6 @@ import { AnalyticsService } from '../../services/analytics.service';
   // ... resto de la configuración
 })
 export class CualquierComponente implements OnInit {
-
   constructor(
     private seoService: SeoService,
     private analytics: AnalyticsService
@@ -40,8 +39,8 @@ export class CualquierComponente implements OnInit {
 
   ngOnInit() {
     // ¡SOLO 2 LÍNEAS! ✨
-    this.seoService.setHomePageSEO();  // ← Método pre-configurado
-    this.analytics.trackHomePage();    // ← Analytics automático
+    this.seoService.setHomePageSEO(); // ← Método pre-configurado
+    this.analytics.trackHomePage(); // ← Analytics automático
   }
 }
 ```
@@ -121,10 +120,9 @@ import { AnalyticsService } from '../../services/analytics.service';
   standalone: true,
   imports: [], // tus imports aquí
   templateUrl: './contacto.component.html',
-  styleUrl: './contacto.component.scss'
+  styleUrl: './contacto.component.scss',
 })
 export class ContactoComponent implements OnInit {
-
   constructor(
     private seoService: SeoService,
     private analytics: AnalyticsService
@@ -132,8 +130,8 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit() {
     // ¡Solo 2 líneas! ✨
-    this.seoService.setContactSEO();     // ← SEO automático
-    this.analytics.trackContactPage();   // ← Analytics automático
+    this.seoService.setContactSEO(); // ← SEO automático
+    this.analytics.trackContactPage(); // ← Analytics automático
   }
 }
 ```
@@ -163,11 +161,10 @@ onSocialMediaClick(platform: string) {
 ```
 
 ### **En el HTML:**
+
 ```html
 <!-- Ejemplo de botones con tracking -->
-<button (click)="onContactButtonClick()" class="btn btn-primary">
-  Contáctanos
-</button>
+<button (click)="onContactButtonClick()" class="btn btn-primary">Contáctanos</button>
 
 <a (click)="onSocialMediaClick('linkedin')" href="https://linkedin.com/company/avtraditions">
   LinkedIn
@@ -194,10 +191,9 @@ import { AnalyticsService } from '../../services/analytics.service';
   standalone: true,
   imports: [],
   templateUrl: './NOMBRE-COMPONENTE.component.html',
-  styleUrl: './NOMBRE-COMPONENTE.component.scss'
+  styleUrl: './NOMBRE-COMPONENTE.component.scss',
 })
 export class NombreComponenteComponent implements OnInit {
-
   constructor(
     private seoService: SeoService,
     private analytics: AnalyticsService
@@ -226,7 +222,7 @@ export class NombreComponenteComponent implements OnInit {
 ```
 □ 1. Crear el componente Angular normal
 □ 2. Agregar método SEO en seo.service.ts
-□ 3. Agregar método Analytics en analytics.service.ts  
+□ 3. Agregar método Analytics en analytics.service.ts
 □ 4. Importar servicios en el componente
 □ 5. Llamar métodos en ngOnInit()
 □ 6. Agregar tracking a botones importantes (opcional)
@@ -234,6 +230,7 @@ export class NombreComponenteComponent implements OnInit {
 ```
 
 ### **Tiempo estimado:**
+
 - **Página existente:** 30 segundos ⚡
 - **Página nueva:** 2 minutos 🚀
 
@@ -244,13 +241,15 @@ export class NombreComponenteComponent implements OnInit {
 Una vez configurado, en Analytics vas a ver:
 
 ### **Páginas automáticamente trackeadas:**
+
 - `/` - Página principal
-- `/portafolio` - Portafolio  
+- `/portafolio` - Portafolio
 - `/portafolio/procesados` - Productos procesados
 - `/portafolio/no-procesados` - Productos sin procesar
 - Y cualquier página nueva que agregues
 
 ### **Eventos automáticamente trackeados:**
+
 - Clicks en botones de contacto
 - Vistas de productos
 - Clicks en redes sociales
@@ -258,6 +257,7 @@ Una vez configurado, en Analytics vas a ver:
 - Métricas de performance
 
 ### **Reportes disponibles:**
+
 - **Tiempo real:** Quién está en tu sitio AHORA
 - **Audiencia:** De dónde vienen tus visitantes
 - **Adquisición:** ¿Google? ¿Facebook? ¿Directo?
@@ -269,6 +269,7 @@ Una vez configurado, en Analytics vas a ver:
 ## 🚨 **Troubleshooting**
 
 ### **"No veo datos en Analytics"**
+
 ```
 1. Verificar que G-XXXXXXXXXX esté actualizado
 2. Esperar 24-48 horas para datos históricos
@@ -277,6 +278,7 @@ Una vez configurado, en Analytics vas a ver:
 ```
 
 ### **"SEO tags no aparecen"**
+
 ```
 1. Verificar que ngOnInit() se ejecute
 2. Usar F12 > Elements > buscar meta tags
@@ -284,6 +286,7 @@ Una vez configurado, en Analytics vas a ver:
 ```
 
 ### **"Eventos no se registran"**
+
 ```
 1. Verificar que gtag esté cargado: console.log(typeof gtag)
 2. Ver Console para errores de JavaScript
@@ -304,6 +307,7 @@ Una vez configurado, en Analytics vas a ver:
 ## 🎯 **RESUMEN SÚPER RÁPIDO**
 
 ### **Para la mayoría de casos (95%):**
+
 ```
 1. Crear componente normal
 2. Importar SEO y Analytics services
@@ -312,6 +316,7 @@ Una vez configurado, en Analytics vas a ver:
 ```
 
 ### **Para páginas totalmente nuevas (5%):**
+
 ```
 1. Agregar método en seo.service.ts (1 vez)
 2. Crear componente normal
@@ -320,6 +325,7 @@ Una vez configurado, en Analytics vas a ver:
 ```
 
 ### **¿Qué pasa automáticamente?**
+
 - ✅ Google ve el título correcto
 - ✅ Facebook/WhatsApp muestran preview bonito
 - ✅ Analytics registra la visita

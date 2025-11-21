@@ -10,15 +10,15 @@
   max-width: 460px;
   color: #fff;
   font-family: 'Merriweather', serif;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
   animation: ravenFade 400ms ease-out forwards;
 
   .raven-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top left, rgba(249,115,22,0.25), transparent 70%),
-                radial-gradient(circle at bottom right, rgba(14,42,71,0.35), transparent 70%),
-                #0E2A47;
+    background:
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.25), transparent 70%),
+      radial-gradient(circle at bottom right, rgba(14, 42, 71, 0.35), transparent 70%), #0e2a47;
     z-index: 0;
   }
 
@@ -33,7 +33,7 @@
   .raven-icon img {
     width: 34px;
     height: 34px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
   }
 
   .raven-text {
@@ -57,20 +57,40 @@
     color: #fff;
     font-size: 1.6rem;
     cursor: pointer;
-    transition: transform .3s, color .2s;
+    transition:
+      transform 0.3s,
+      color 0.2s;
     &:hover {
-      color: #F97316;
+      color: #f97316;
       transform: rotate(90deg);
     }
   }
 
-  &.success { border: 2px solid #16A34A; box-shadow: 0 0 25px rgba(22,163,74,0.7); }
-  &.error   { border: 2px solid #DC2626; box-shadow: 0 0 25px rgba(220,38,38,0.7); }
-  &.warning { border: 2px solid #F97316; box-shadow: 0 0 25px rgba(249,115,22,0.7); }
-  &.info    { border: 2px solid #3B82F6; box-shadow: 0 0 25px rgba(59,130,246,0.7); }
+  &.success {
+    border: 2px solid #16a34a;
+    box-shadow: 0 0 25px rgba(22, 163, 74, 0.7);
+  }
+  &.error {
+    border: 2px solid #dc2626;
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.7);
+  }
+  &.warning {
+    border: 2px solid #f97316;
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.7);
+  }
+  &.info {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+  }
 }
 
 @keyframes ravenFade {
-  from { opacity: 0; transform: translateY(-12px) scale(0.95); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

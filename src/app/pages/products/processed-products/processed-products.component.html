@@ -5,8 +5,8 @@
         <div class="text-center mb-5">
           <h2>Nuestros productos procesados</h2>
           <p class="lead text-muted">
-            Nuestra selección premium de productos agrícolas procesados listos
-            para el comercio internacional
+            Nuestra selección premium de productos agrícolas procesados listos para el comercio
+            internacional
           </p>
         </div>
       </div>
@@ -19,12 +19,16 @@
             <h5 class="card-title">{{ processedProduct.title }}</h5>
             <p class="card-text">{{ processedProduct.description }}</p>
           </div>
-            <div class="d-flex justify-content-center mb-2">
-              <button (click)="selectedProduct = processedProduct" type="button" class="btn btn-primary"
-                data-bs-toggle="modal" data-bs-target="#productModal">
-                Conocer más
-              </button>
-            </div>
+          <div class="d-flex justify-content-center mb-2">
+            <button
+              (click)="selectedProduct = processedProduct"
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#productModal">
+              Conocer más
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -34,7 +38,11 @@
         <div class="text-center mb-5">
           <h3>¿Necesitas uno de nuestros productos?</h3>
           <p class="lead text-muted">Ponte en contacto</p>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactUsModal">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#contactUsModal">
             Contáctanos
           </button>
         </div>
@@ -43,33 +51,52 @@
   </div>
 </div>
 
-<div class="modal fade" id="productModal" #productModal data-bs-backdrop="static" data-bs-keyboard="false">
+<div
+  class="modal fade"
+  id="productModal"
+  #productModal
+  data-bs-backdrop="static"
+  data-bs-keyboard="false">
   <div class="modal-dialog modal-lg productModal" role="document">
     <div class="modal-content contact-card p-4 p-md-5 rounded-4 shadow-lg needs-validation">
       <div class="modal-header">
-        <h5> {{ selectedProduct?.title }} </h5>
+        <h5>{{ selectedProduct?.title }}</h5>
       </div>
       <div class="modal-body">
         <div class="d-flex align-items-center justify-content-center">
-          <img [src]="selectedProduct?.image" class="img-fluid mb-3 " width="350px" [alt]="selectedProduct?.title">
+          <img
+            [src]="selectedProduct?.image"
+            class="img-fluid mb-3"
+            width="350px"
+            [alt]="selectedProduct?.title" />
         </div>
         <p class="card-text">{{ selectedProduct?.description }}</p>
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item" *ngFor="let child of selectedProduct?.children; index as i">
-            <h2 class="accordion-header" id="flush-heading{{i}}">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
+            <h2 class="accordion-header" id="flush-heading{{ i }}">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#flush-collapse' + i"
+                aria-expanded="false"
                 [attr.aria-controls]="'flush-collapse' + i">
                 {{ child.title }}
               </button>
             </h2>
-            <div [id]="'flush-collapse' + i" class="accordion-collapse collapse"
+            <div
+              [id]="'flush-collapse' + i"
+              class="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
                 <p>{{ child.description }}</p>
               </div>
               <div class="accordion-footer d-flex align-items-center justify-content-center">
-                <img [src]="child?.image" class="img-fluid mb-3" width="350px" [alt]="selectedProduct?.title">
+                <img
+                  [src]="child?.image"
+                  class="img-fluid mb-3"
+                  width="350px"
+                  [alt]="selectedProduct?.title" />
               </div>
             </div>
           </div>
@@ -90,8 +117,13 @@
         <div class="row g-3">
           <div class="col-12">
             <div class="form-floating">
-              <input type="text" class="form-control" id="fullName" placeholder="Nombre Completo" required
-                formControlName="fullName">
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="Nombre Completo"
+                required
+                formControlName="fullName" />
               <label for="fullName">Nombre completo</label>
               <div class="invalid-feedback">Tu nombre es requerido.</div>
             </div>
@@ -99,16 +131,25 @@
 
           <div class="col-12">
             <div class="form-floating">
-              <input type="text" class="form-control" id="company-name" placeholder="Nombre de la Empresa"
-                formControlName="companyName">
+              <input
+                type="text"
+                class="form-control"
+                id="company-name"
+                placeholder="Nombre de la Empresa"
+                formControlName="companyName" />
               <label for="company-name">Nombre de la empresa</label>
             </div>
           </div>
 
           <div class="col-12 col-md-6">
             <div class="form-floating">
-              <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required
-                formControlName="email">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Correo electrónico"
+                required
+                formControlName="email" />
               <label for="email">Correo electrónico</label>
               <div class="invalid-feedback">Ingresa un correo válido.</div>
             </div>
@@ -116,7 +157,12 @@
 
           <div class="col-12 col-md-6">
             <div class="form-floating">
-              <input type="tel" class="form-control" id="phone" placeholder="Teléfono" formControlName="phone">
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="Teléfono"
+                formControlName="phone" />
               <label for="phone">Teléfono</label>
             </div>
           </div>
@@ -149,7 +195,10 @@
 
           <div class="col-12">
             <div class="form-floating">
-              <textarea class="form-control request-textarea" placeholder="Mensaje" id="request"
+              <textarea
+                class="form-control request-textarea"
+                placeholder="Mensaje"
+                id="request"
                 formControlName="request"></textarea>
               <label for="request">Mensaje detallando el requerimiento</label>
             </div>
@@ -157,7 +206,12 @@
 
           <div class="col-12">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="terms" required formControlName="terms">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="terms"
+                required
+                formControlName="terms" />
               <label class="form-check-label" for="terms">
                 Acepto el tratamiento de datos personales
               </label>
@@ -167,11 +221,21 @@
 
           <div class="col-12 btn-box">
             <div class="mx-5 d-flex gap-3 justify-content-center align-items-center">
-              <button [disabled]="loading || contactUsForm.invalid" type="submit" class="btn btn-primary btn-lg">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+              <button
+                [disabled]="loading || contactUsForm.invalid"
+                type="submit"
+                class="btn btn-primary btn-lg">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                  *ngIf="loading"></span>
                 <span>{{ loading ? 'Enviando…' : 'Enviar' }}</span>
               </button>
-              <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal"
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg"
+                data-bs-dismiss="modal"
                 (click)="contactUsForm.reset()">
                 <span>Cancelar</span>
               </button>
@@ -183,10 +247,24 @@
   </div>
 </div>
 
-<app-alerts *ngIf="successMsg" type="success" title="¡Éxito!" [message]="successMsg" [autoClose]="true"
-  [autoCloseDelay]="4000" [showLogo]="true" [position]="'top-right'" (closed)="onCloseSuccess()">
+<app-alerts
+  *ngIf="successMsg"
+  type="success"
+  title="¡Éxito!"
+  [message]="successMsg"
+  [autoClose]="true"
+  [autoCloseDelay]="4000"
+  [showLogo]="true"
+  [position]="'top-right'"
+  (closed)="onCloseSuccess()">
 </app-alerts>
 
-<app-alerts *ngIf="errorMsg" type="error" title="Ocurrió un problema" [message]="errorMsg" [dismissible]="true"
-  [position]="'top-right'" (closed)="onCloseError()">
+<app-alerts
+  *ngIf="errorMsg"
+  type="error"
+  title="Ocurrió un problema"
+  [message]="errorMsg"
+  [dismissible]="true"
+  [position]="'top-right'"
+  (closed)="onCloseError()">
 </app-alerts>

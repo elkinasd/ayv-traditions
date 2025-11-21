@@ -1,5 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 export type AvtAlertType = 'success' | 'error' | 'warning';
 export type AvtAlertPosition = 'inline' | 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
@@ -9,7 +18,7 @@ export type AvtAlertPosition = 'inline' | 'top-right' | 'top-left' | 'bottom-rig
   standalone: true,
   imports: [CommonModule],
   templateUrl: './alerts.component.html',
-  styleUrl: './alerts.component.scss'
+  styleUrl: './alerts.component.scss',
 })
 export class AlertsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() type: AvtAlertType = 'success';
@@ -24,14 +33,19 @@ export class AlertsComponent implements OnInit, OnDestroy, OnChanges {
   @Output() closed = new EventEmitter<void>();
 
   isVisible = true;
-  private timer: any = null;
+  private timer: ReturnType<typeof setTimeout> | null = null;
 
   ngOnInit(): void {
     this.setupAutoClose();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['autoClose'] || changes['autoCloseDelay'] || changes['message'] || changes['type']) {
+    if (
+      changes['autoClose'] ||
+      changes['autoCloseDelay'] ||
+      changes['message'] ||
+      changes['type']
+    ) {
       this.clearTimer();
       this.setupAutoClose();
     }

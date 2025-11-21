@@ -1,37 +1,34 @@
 <section id="about" class="about">
   <div class="container">
     <div class="row align-items-center">
-      <h2 class="text-center display-3 fw-bold mb-4">
-        Acerca de A&V Traditions
-      </h2>
+      <h2 class="text-center display-3 fw-bold mb-4">Acerca de A&V Traditions</h2>
       <h6 class="lead text-center mb-5">
-        Construido sobre la confianza, la tradición y la búsqueda incansable de
-        la excelencia en el comercio internacional.
+        Construido sobre la confianza, la tradición y la búsqueda incansable de la excelencia en el
+        comercio internacional.
       </h6>
     </div>
     <div class="row g-4 align-items-start">
       <div class="col-12 col-lg-8">
         <h4>Nuestra historia</h4>
         <p>
-          A&V Traditions surgió de la visión de conectar los mercados globales
-          con la experiencia local. Fundados en principios de integridad e
-          innovación, nos especializamos en conectar a productores agrícolas con
-          compradores internacionales mediante una logística eficiente y un
-          compromiso inquebrantable con la calidad.
+          A&V Traditions surgió de la visión de conectar los mercados globales con la experiencia
+          local. Fundados en principios de integridad e innovación, nos especializamos en conectar a
+          productores agrícolas con compradores internacionales mediante una logística eficiente y
+          un compromiso inquebrantable con la calidad.
         </p>
         <p>
-          Nuestro compromiso con BIC (Business Intelligence & Commerce)
-          garantiza que cada transacción esté respaldada por información basada
-          en datos, fomentando colaboraciones sostenibles que abarcan todos los
-          continentes. Creemos en la magia de la tradición combinada con la
-          eficiencia moderna.
+          Nuestro compromiso con BIC (Business Intelligence & Commerce) garantiza que cada
+          transacción esté respaldada por información basada en datos, fomentando colaboraciones
+          sostenibles que abarcan todos los continentes. Creemos en la magia de la tradición
+          combinada con la eficiencia moderna.
         </p>
       </div>
       <div class="col-12 col-lg-4">
         <div class="p-4 p-md-5 rounded-4 bg-white shadow pet-container">
-          <p class="mt-3 text-center fst-italic text-muted">En A&V Traditions unimos la riqueza de
-            nuestra tierra con la visión global, construyendo puentes sostenibles entre productores
-            y mercados internacionales.</p>
+          <p class="mt-3 text-center fst-italic text-muted">
+            En A&V Traditions unimos la riqueza de nuestra tierra con la visión global, construyendo
+            puentes sostenibles entre productores y mercados internacionales.
+          </p>
         </div>
       </div>
     </div>
@@ -39,14 +36,15 @@
       <div class="row gy-3">
         <div *ngFor="let service of services" class="col-12 col-sm-12 col-md-6">
           <div class="d-flex align-items-center p-3 bg-white rounded-4 shadow-sm card">
-            <div class="icon-wrapper d-flex align-items-center justify-content-center"
+            <div
+              class="icon-wrapper d-flex align-items-center justify-content-center"
               [ngStyle]="{ 'background-color': service.bgColor }">
               <span class="material-icons" [ngStyle]="{ color: service.color }">
                 {{ service.icon }}
               </span>
             </div>
             <p class="mb-0 fw-semibold text-dark">{{ service.title }}</p>
-              <p class="mb-0 text-dark">{{ service.descripcion }}</p>
+            <p class="mb-0 text-dark">{{ service.descripcion }}</p>
           </div>
         </div>
       </div>

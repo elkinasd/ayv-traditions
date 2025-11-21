@@ -1,18 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
   imports: [],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.scss'
+  styleUrl: './not-found.component.scss',
 })
 export class NotFoundComponent {
-  private router = inject(Router)
+  private router = inject(Router);
 
-  backToHome(){
-    this.router.navigate(['/'])
+  backToHome() {
+    this.router.navigate(['/']);
   }
-
 }

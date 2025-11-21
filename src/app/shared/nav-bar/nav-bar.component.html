@@ -1,64 +1,82 @@
 <nav class="nav-bar navbar navbar-dark px-3 fixed-top">
-    <div class="container-fluid justify-content-between">
-        <a class="navbar-brand" href="/">A&V Traditions</a>
-        <!-- pantallas grandes -->
-        <div class="d-flex align-items-center gap-2">
-            <ul class="navbar-nav d-none d-lg-flex flex-row gap-2 mb-0">
-                <li class="nav-item">
-                    <a class="nav-link" (click)="scrollToSection('hero')">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="scrollToSection('about')">¿Quiénes somos?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="scrollToSection('why-us')" routerLinkActive="active">¿Por qué elegirnos?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="scrollToSection('services')">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="products">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="scrollToSection('contact')" routerLinkActive="active">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Botón hamburguesa móviles -->
-        <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" href="/">A&V Traditions</a>
+    <!-- pantallas grandes -->
+    <div class="d-flex align-items-center gap-2">
+      <ul class="navbar-nav d-none d-lg-flex flex-row gap-2 mb-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('hero')" (keydown.enter)="scrollToSection('hero')" tabindex="0">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('about')" (keydown.enter)="scrollToSection('about')" tabindex="0">¿Quiénes somos?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('why-us')" (keydown.enter)="scrollToSection('why-us')" tabindex="0" routerLinkActive="active"
+            >¿Por qué elegirnos?</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('services')" (keydown.enter)="scrollToSection('services')" tabindex="0">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('contact')" (keydown.enter)="scrollToSection('contact')" tabindex="0" routerLinkActive="active"
+            >Contáctanos</a
+          >
+        </li>
+      </ul>
     </div>
+    <!-- Botón hamburguesa móviles -->
+    <button
+      class="btn btn-outline-dark d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasMenu"
+      aria-controls="offcanvasMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 </nav>
 
 <!-- Menú móviles -->
-<div #offcanvasRef class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu"
-    aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="navigateToSection('hero')">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="navigateToSection('about')">¿Quiénes somos?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="navigateToSection('services')">Servicios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="products" (click)="closeOffcanvas()">Productos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="navigateToSection('why-us')">¿Por qué elegirnos?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="navigateToSection('contact')">Contáctanos</a>
-            </li>
-        </ul>
-    </div>
+<div
+  #offcanvasRef
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasMenu"
+  aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="navigateToSection('hero')">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="navigateToSection('about')">¿Quiénes somos?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="navigateToSection('services')">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="products" (click)="closeOffcanvas()">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="navigateToSection('why-us')"
+          >¿Por qué elegirnos?</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="navigateToSection('contact')">Contáctanos</a>
+      </li>
+    </ul>
+  </div>
 </div>

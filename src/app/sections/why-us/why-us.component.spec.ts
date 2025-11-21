@@ -8,9 +8,8 @@ describe('WhyUsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WhyUsComponent]
-    })
-    .compileComponents();
+      imports: [WhyUsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WhyUsComponent);
     component = fixture.componentInstance;
